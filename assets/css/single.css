@@ -1,0 +1,140 @@
+.services-title {
+    /* text-align: center; */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.services-p {
+    /* text-align: center; */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+
+/* Cards */
+
+.service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 330px;
+    height: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card:hover img {
+    color: white;
+    filter: invert(27%) saturate(2878%) sepia(100%) hue-rotate(346deg) brightness(537%) contrast(97%);
+}
+
+.card hr {
+    height: 3px;
+    width: 30%;
+    color: #808080;
+}
+
+.card:hover hr {
+    height: 3px;
+    width: 30%;
+    color: #ff6a00;
+}
+
+.card:hover {
+    background-color: #000685;
+    color: white;
+}
+
+.card-body p.desc :hover {
+    margin-top: 5px;
+    color: #ffffff;
+}
+
+
+
+
+ @media screen and (min-width: 200px) {
+    .card8 p {
+        height: 180px;
+    }   
+    /* .card8 h2 {
+        margin-top: 30px;
+        height: 40px;
+    } */
+}
+
+@media screen and (min-width: 600px) {
+    .card8 p {
+        height: 150px;
+    }   
+    /* .card8 {
+        height: 230px;
+    } 
+    .card8 h2 {
+        margin-top: 5px;
+        height: 30px;
+    }    */
+} 
+
+@media screen and (min-width: 200px) {
+    .cardGap {
+        margin: 100px 25px 100px;
+    }
+}
+@media screen and (min-width: 600px) {
+    .cardGap {
+        margin: 100px 100px 100px;
+    }
+}
+
+
+
+
+
+
+/* .card8 .card-body img {
+    background-color: #ffffff;
+    border: #808080;
+    border-style: solid;
+    border-radius: 50%;
+    border-width: 1px;
+     size: 50%;
+    
+    } */
+
+
+    /* .card8 .card-body .cntn{
+
+        margin-top: -68px;
+        width: 90px;
+        background: #757575;
+        padding: 23px;
+      
+    }
+
+    .card8 .card-body .cntn img {
+
+        height: 42px;
+        
+        filter: invert(27%) saturate(2878%) sepia(100%) hue-rotate(346deg) brightness(537%) contrast(97%);
+        
+        } */
+
+
+
+
+/* .card8 hr {
+    height: 3px;
+    width: 30%;
+    color: #808080;
+} */

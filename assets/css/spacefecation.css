@@ -1,0 +1,41 @@
+.tab_button {
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    margin: 0px 0px 0px 0px;
+    padding: 8px 15px 8px 15px;
+    width: 95px;
+   
+}
+.tab_button:hover {
+    background-color: #dedee4;
+}
+.tabs_content {
+    display: none;
+}
+.tab_button_active {
+    background-color: #dedee4;
+}
+.tab_content_active {
+    display: block;
+}
+
+@media screen and (min-width: 700px) {
+    .sub_table_button {
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .bs {
+        width: 210px;
+    }
+}
+@media screen and (min-width: 600px) {
+    .bst {
+        width: 230px; 
+    }
+}
+@media screen and (min-width: 600px) {
+
+}

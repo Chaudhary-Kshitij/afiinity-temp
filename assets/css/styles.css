@@ -1,0 +1,312 @@
+
+a {
+	text-decoration: none;
+}
+
+/* Go to top button */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: rgb(30, 35, 37);
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+/*--------------------------------------------------------
+Header
+--------------------------------------------------------*/
+/* .navbar {
+  background-color: #fff;
+}
+.navbar-nav .nav-item {
+	font-weight: 500;
+	padding: 5px 10px;
+}
+
+.navbar-nav .nav-item .nav-link {
+	color: #000 !important;
+}
+
+.navbar-nav .nav-item .enrollbtn {
+	border-radius: 50px;
+	background-color: #0086FF;
+	border: none;
+	padding: 8px 35px;
+	transition: all 0.5s;
+}
+
+.navbar-nav .nav-item .enrollbtn:hover {
+	background-color: #0052CC;
+} */
+
+/*--------------------------------------------------------
+Hero section 
+--------------------------------------------------------*/
+
+#hero {
+  padding-bottom: 50px ;
+}
+
+#hero .container {
+  padding-top: 70px;
+}
+
+#hero h1 {
+  font-family: Nunito;
+  font-weight: 700;
+  color: #fff;
+}
+
+#hero p {
+  color: #fff;
+  font-family: Nunito;
+}
+
+#hero .highlight {
+  background-color: #fff;
+  border-radius: 55px;
+  display: inline-block;
+  color: #000;
+  padding: 7px 14px;
+}
+
+#hero .buybtn {
+  padding: 10px 0;
+  width: 100%;
+  border-radius: 55px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #fff;
+  color: #186CCF;
+  border: none;
+}
+
+#hero .contain  {
+  position: relative;
+}
+
+#hero .smallcard {
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  position: absolute;
+  top: 60%;
+  left: 0;
+}
+
+#hero .smallcard2 {
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+#hero .smallcard3 {
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+
+/*-------------------------------------------
+Animation for card1
+----------------------------------------------*/
+.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/*-------------------------------------------
+Animation for card2
+----------------------------------------------*/
+.vert-move2 {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover1 1s infinite  alternate;
+}
+.vert-move2 {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover1 1s infinite  alternate;
+}
+
+@keyframes mover1 {
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/*-------------------------------------------
+Animation for card3
+----------------------------------------------*/
+.vert-move3 {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover2 1s infinite  alternate;
+}
+.vert-move3 {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover2 1s infinite  alternate;
+}
+
+.vert-move4 {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover2 1s infinite  alternate;
+}
+.vert-move4 {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover2 1s infinite  alternate;
+}
+
+@keyframes mover2 {
+    0% { transform: translateY(10px); }
+    100% { transform: translateY(0px); }
+}
+
+#hero .whitecard {
+  background-color: #fff;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0px 2.57503px 10.3001px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  padding: 10px 50px;
+  position: relative;
+}
+
+#hero .whitecard .offer {
+  position: absolute;
+  left: -70px;
+  width: 50%;
+}
+
+#hero .whitecard .band {
+  position: absolute;
+  right: -30px;
+  bottom: -50px;
+  width: 50%;
+}
+
+#hero .whitecard h5 {
+  font-family: rubik;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+@media (max-width: 990px) {
+  #hero .vert-move, .vert-move2, .vert-move3 {
+    font-size: 13px;
+    padding: 5px !important;
+  }
+
+  #hero .vert-move img {
+    width: 30px;
+  }
+  #hero .vert-move2 img {
+    width: 30px;
+  }
+  #hero .vert-move3 img {
+    width: 30px;
+  }
+}
+
+
+
+
+
+.iframe-container iframe{
+
+  width: 100%;
+   
+  
+   }
+  
+  .contact{
+      margin-bottom: 100px;
+    
+  }
+  .contact .left-side{
+      flex: 1;
+  }
+   
+  
+  .get-in-touch {
+      display: flex;
+      justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 50px;
+     
+    
+  }
+  .get-in-touch .left-side{
+      flex: 1;
+       
+  }
+  .get-in-touch .left-side h1,.get-in-touch .left-side p{
+      margin-bottom: 40px;
+  }
+   .get-in-touch .right-side{
+       flex: 1;
+   }
+   .get-in-touch .right-side form{
+       background-color: white;
+       padding: 30px 10px     ;
+       width: 95%;
+       margin: 0 auto;
+       border-radius: 20px;
+       
+   }
+  
+   .send-btn{
+       background-color: #4278f5;
+       color: white;
+        
+       padding: 10px 60px ;
+  
+   }
+   .send-btn:hover {
+    background-color: #034fff;
+    color: white;
+
+   }
+  
+  
+  
+   

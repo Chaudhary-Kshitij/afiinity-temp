@@ -1,0 +1,86 @@
+
+.about {
+    background-color: #00cccc;
+    border-radius: 12px;
+}
+
+.instant {
+    background-color: #155183;
+    border-radius: 8px;
+}
+
+#box1 {
+    color: black;
+    /* background-color: #155183; */
+}
+/* .vr {
+position: absolute;
+width: 40px;
+height: 0px;
+left: 345px;
+top: 33px;
+
+border: 1px solid rgba(0, 0, 0, 0.2);
+transform: rotate(90deg);
+} */
+
+.box {
+    background-color:#155183;
+}
+
+
+
+.card {
+    background-color: #8ECFEF;
+}
+
+.head {
+    text-align: center;
+    padding-bottom: 0.1rem;
+    padding-top: 3rem;
+}
+
+
+.foot {
+    padding: 4rem;
+    background-color: #F8F4FF;
+    color: #381975;
+    
+}
+
+#footer {
+    background-color: white;
+}
+.first {
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
+    padding-right: 4rem;
+    
+}
+
+.ship {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+@media (max-width: 767px) {
+    .ship {
+        padding-left: 8rem;
+    }
+    
+}
+
+
+
+.ago :after {
+    content: "";
+    position: absolute;
+    left:0;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width .3s ease-in-out;
+  }
+  .ago :hover:after {
+    width: 100%;
+  }

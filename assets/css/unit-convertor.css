@@ -1,0 +1,193 @@
+#section1 {
+    border-radius: 20px;
+    /* box-shadow: -8px -8px 16px rgba(0, 100, 239, 0.1), 8px 8px 16px rgba(0, 100, 239, 0.1); */
+    /* background-color: rgba(226, 226, 255, 0.3); */
+}
+#col1 h1{
+    color: #407BFF;
+    font-weight: 900;
+}
+
+#col1 #text1{
+    color: #407BFF;
+}
+
+::placeholder {
+    font-size: small;
+    padding: 2rem;
+    height: 38px;
+    width: 320px;
+}
+input {
+    padding-left: 0.5rem;
+}
+#outputcal1, #outputcal1B, #outputcal3, #outputcal3B{
+    height: 38px;
+    width: 100%;
+}
+
+#outputcal5, #outputcal5B{
+    height: 38px;
+    width: 100%;
+}
+#outputcal4, #outputcal4B{
+    height: 38px;
+    width: 100%;
+}
+#outputcal2,#outputcal2B{
+    height: 38px;
+    width: 100%;
+}
+
+#inputGroupSelect01 {
+    width: 100%;
+    height: 2.5rem;
+}
+#inputType1,#inputType1B  {
+    width: 100%;
+    height: 2.5rem;
+}
+#resultType1,#resultType1B {
+    width: 100%;
+    height: 2.5rem;
+}
+
+#inputType5,#inputType5B {
+    width: 100%;
+    height: 2.5rem;
+}
+#resultType5,#resultType5B {
+    width: 100%;
+    height: 2.5rem;
+}
+
+#inputType2,#inputType2B {
+    width: 100%;
+    height: 2.5rem;
+}
+#resultType2,#resultType2B {
+    width: 100%;
+    height: 2.5rem;
+}
+
+#inputType3,#inputType3B  {
+    width: 100%;
+    height: 2.5rem;
+}
+#resultType3,#resultType3B {
+    width: 100%;
+    height: 2.5rem;
+}
+
+#inputType4,#inputType4B  {
+    width: 100%;
+    height: 2.5rem;
+}
+#resultType4, #resultType4B {
+    width: 100%;
+    height: 2.5rem;
+}
+
+#button {
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#placeholder1, #placeholder1B {
+    height: 38px;
+    width: 100%;
+}
+
+#placeholder5,#placeholder5B {
+    height: 38px;
+    width: 100%;
+}
+#placeholder4,#placeholder4B  {
+    height: 38px;
+    width: 100%;
+}
+#placeholder2,#placeholder2B,#placeholder3,#placeholder3B  {
+    height: 38px;
+    width: 100%;
+}
+
+/* .input-group {
+    border-radius: 10px;
+} */
+
+#inputGroupSelect02 {
+    width: 6rem;
+    height: 2.5rem;
+    padding-left: 10%;
+}
+#col2 {
+    background-color: white;
+}
+
+.replace {
+    background-color:  #155183;
+    color: white;
+}
+
+#output {
+    background-color: #407BFF;
+    color: white;
+    font-weight: 900;
+    border-radius: 20px;
+}
+
+
+
+
+@media (max-width: 575px) {
+    #col2 img {
+        display: none;
+    }
+}
+
+
+.tab {
+    overflow: hidden;
+    border-bottom: 1px solid #2f3c4e;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    font-weight: 500;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 20px;
+}
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #155183;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 15px 12px;
+    border-top: none;
+  }
+
+
+

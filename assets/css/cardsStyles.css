@@ -1,0 +1,20 @@
+.cards1 {
+    background-color: white;
+}
+
+.cards1:hover {
+    background-color: #0080FF;
+    transition: 0.5s;
+    color: white;
+}
+
+.cards4 {
+    background-color: white;
+}
+
+
+/* .box1 {
+    border-bottom: 10px solid #5BC5D3 ;
+    border-radius: 7px;
+    
+} */
