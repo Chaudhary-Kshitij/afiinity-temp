@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>DEMURAGE</h2>
+    
+    <p id="demo"></p>
+    <label>discharge date</label>
+    <input name="disch " id="discharge" type="date" /><br /><br />
+    <label>Consign date</label>
+    <input name="cons" id="cons" type="date" />
+    <br /><br>
+    <label>free days</label>
+    <input name="free" id="num" type="number" />
+    <br /><br>
+    <label>Rate per day </label>
+    <input name="free" id="rate" type="number" />
+
+    <br /><br>
+
+    <button id="sub">SUBMIT</button>
+
+    <script>
+    //   const d = new Date("2022-04-14T09:22:13.493+00:00");
+    //   d.toLocaleString();
+    //   document.getElementById("demo").innerHTML = d;
+
+      // calculate
+
+      document.getElementById("sub").addEventListener("click", () => {
+          //console.log("pressed")
+        dis = document.getElementById("discharge");
+        consi = document.getElementById("cons");
+        free = document.getElementById("num");
+        rates = document.getElementById("rate");
+
+        var date1 = new Date(dis.value);
+        var date2 = new Date(consi.value);
+
+        // To calculate the time difference of two dates
+        var Time = date2.getTime() - date1.getTime();
+
+        // To calculate the no. of days between two dates
+        var Dewell = Time / (1000 * 3600 * 24) + 1;
+        console.log("DWELL TIME: "+ Dewell + " days")
+        var overstay = Dewell - free.value
+        console.log("OVERSTAY: "+ overstay + " days")
+        var charge = overstay * rates.value
+        console.log("DEMURAGE CHARGE: "+ charge)
+        
+        // 
+         
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,2264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./assets/img/Logo only.png">
+
+    <title>unit-convertor</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    
+
+    <link rel="stylesheet" href="/assets/css/style.css"/>
+    <link rel="stylesheet" href="/assets/css/get.css"/>
+    <link rel="stylesheet" href="/assets/css/index.css"/>
+    <link rel="stylesheet" href="/assets/css/single.css"/>
+    <link rel="stylesheet" href="/assets/css/ty.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/unit-convertor.css">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- header footer script  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#menu").load("header.html");
+            $("#footer").load("footer.html");
+            
+        });
+    </script>
+    
+
+</head>
+<body>
+    <div id="menu"></div>
+    <div class="mt-3 pb-3">
+        <h1 class="text-center fw-bold"><b>UNIT CONVERTOR</b></h1>
+    </div>
+
+
+
+
+
+   
+    <section style="font-family: poppins" class="container" id="section1">
+
+
+        
+
+        <div class="shadow-lg align-items-center pt-2 pb-4 px-3 mx-auto" style="border-radius: 20px;margin-bottom: 80px; width: 99%;">
+
+
+            <div class="tab">
+                <button class="tablinks active" onclick="openCity(event, 'length'), myFunction1()">Length</button>
+                <button class="tablinks" onclick="openCity(event, 'mass'), myFunction2()">Mass</button>
+                <button class="tablinks" onclick="openCity(event, 'volume'), myFunction3()">Volume</button>
+                <button class="tablinks" onclick="openCity(event, 'temperature'), myFunction5()">Temperature</button>
+              </div>
+              
+              <div id="length" class="tabcontent" style="display: block;">
+                
+                <form id="myform1">
+
+                <div class="row">
+
+                <div class="col-lg-8 col-md-8 col-sm-12" id="col1">
+                    <p class="">Select the system you want to Convert <span id="text1"><b> From </b></span> to <span id="text1"><b>To</b></span></p>
+                  <div class="d-lg-flex">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="metric" id="metric1" value="metric" onchange="errorCheck1()" onclick="metricEnable1()">
+                        <label class="form-check-label" for="metric">
+                            Metric System to Imperial System
+                        </label>
+                   </div>
+                    <div class="form-check ps-lg-5">
+                        <input class="form-check-input" type="radio" name="metric" id="imperial1" value="imperial" onchange="errorCheck1a()" onclick="imperialEnable1()">
+                        <label class="form-check-label" for="metric">
+                            Imperial System to Metric System
+                        </label>
+                    </div>
+                  </div>
+    
+                    <div class="row pt-4 form" id="toolA">  
+
+                        <div class="row">
+                        <div class="col">
+                            <div class="text-danger d-block" id="error_message1a"></div>
+                        </div>
+                        <div class="col align-self-end">
+                        <div class="text-danger d-block" id="error_message1b"></div>
+                        </div>
+                        </div>
+
+                        <div class="col col1">
+                            <div class="input-group mb-3 d-inline">
+                                <select class="form-select" id="inputType1" required style="padding: 10;" disabled onchange = "EnableDisableTextBoxMetric(); sel1()">
+                                    <option  class="p-5 text-muted option" selected value="select">Select the unit</option>
+                                    <option value="mm">Millimetere(mm)</option>
+                                    <option value="cm">Centimetres (cm)</option>
+                                    <option value="m">Metres (m)</option>
+                                    <option value="km">Kilometres (km)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="py-4">
+                                 <input class="" type="text" placeholder="0" id="placeholder1" disabled>
+                            </div>
+                            <div class="py-4">
+                                <div class="col-lg-4 col-md-4 col-sm-6 pb-3">
+                                    <div class="d-inline box"><button type="reset" class="btn replace px-5" onclick="myFunction1()">Reset</button></div>
+                                </div>
+                            </div>
+                            
+
+                        </div>
+                        
+
+                         <div class="col col2">
+                             <div class="input-group mb-3 d-inline">
+                                 <select class="form-select" id="resultType1" required style="padding: 10;" disabled onchange = "EnableDisableTextBoxMetric(); errorCheck1()">
+                                    <option  class="p-5 text-muted option" value="select" selected>Select the unit</option>
+                                    <option value="in">Inches (in)</option>
+                                    <option value="ft">Feet (ft)</option>
+                                    <option value="yd">Yard (yd)</option>
+                                    <option value="mi">Miles (mi)</option>
+                                 </select>
+                             </div>
+                             <div class="py-4">
+                                 <input class="" type="text" placeholder="0" id="outputcal1" disabled>
+                             </div>
+
+                         </div>
+
+                     </div>
+                     
+
+                    <div class="row pt-4" id="toolB">  
+                        <div class="row">
+                            <div class="col">
+                                <div class="text-danger d-block" id="error_message11a"></div>
+                            </div>
+                            <div class="col align-self-end">
+                                <div class="text-danger d-block" id="error_message11b"></div>
+                            </div>
+                            </div>
+
+                        <div class="col col1">
+                            <div class="input-group mb-3 d-inline">
+                                <select class="form-select" id="resultType1B"  style="padding: 10;" disabled onchange = "EnableDisableTextBoxImperial(); sel1a()">
+                                   <option  class="p-5 text-muted option" selected value="select">Select the unit</option>
+                                   <option value="in">Inches (in)</option>
+                                   <option value="ft">Feet (ft)</option>
+                                   <option value="yd">Yard (yd)</option>
+                                   <option value="mi">Miles (mi)</option>
+                                </select>
+                            </div>
+                            <div class="py-4">
+                                <input class="" type="text" placeholder="0" id="outputcal1B" disabled>
+                            </div>
+                            <div class="py-4">
+                                <div class="col-lg-4 col-md-4 col-sm-6 pb-3">
+                                    <div class="d-inline box"><button type="reset" class="btn replace px-5" onclick="myFunction1()">Reset</button></div>
+                                </div>
+                           </div>
+                            
+                             
+                        </div>
+            
+                         <div class="col col2">
+                             <div class="input-group mb-3 d-inline">
+                                 <select class="form-select" id="inputType1B" style="padding: 10;" disabled onchange = "EnableDisableTextBoxImperial(); errorCheck1a();">
+                                     <option  class="p-5 text-muted option" selected value="select" >Select the unit</option>
+                                     <option value="mm">Millimetere(mm)</option>
+                                    <option value="cm">Centimetres (cm)</option>
+                                         <option value="m">Metres (m)</option>
+                                         <option value="km">Kilometres (km)</option>
+                            </div>
+                            <div class="py-4">
+                                 <input class="" style="margin-top: 1.5rem;" type="text" placeholder="0" id="placeholder1B" disabled>
+                            </div>
+
+                         </div>
+                     </div>
+            
+                     <div class="row pb-5" id="tool2">  
+                         <div class="col-sm-12 col-md-6 col-lg-6 col1">
+                             
+                         </div>
+                     </div>
+                   
+                </div>
+                <div class="col-lg-4 col-md-4 mt-5 text-center">
+                    <div class="bg-primary py-4" style="border-radius: 20px;">
+                        <h2 style="color: white;" class="fs-3 fw-bolder pb-lg-3" >OUTCOME</h2>
+                        <h2 style="color: white;" class="fs-4" id="out1"></h2>
+                    </div>
+                </div>
+              </div>
+              
+              </form>
+
+            </div>
+              
+              <div id="mass" class="tabcontent">
+
+                <form id="myform2">
+                
+                <div class="row">
+
+                <div class="col-lg-8 col-md-8 col-sm-12" id="col1">
+                    <p class="">Select the system you want to Convert <span id="text1"><b> From </b></span> to <span id="text1"><b>To</b></span></p>
+                  <div class="d-lg-flex">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="metric2"  onchange="errorCheck2()" onclick="metricEnable2()">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Metric System to Imperial System
+                        </label>
+                   </div>
+                    <div class="form-check ps-lg-5">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="imperial2" onchange="errorCheck2a()" onclick="imperialEnable2()">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Imperial System to Metric System
+                        </label>
+                    </div>
+                  </div>
+                  <div class="text-danger d-block" id="error_message2"></div>
+    
+                    <div class="row pt-4" id="toolMA">  
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="text-danger d-block" id="error_message2a"></div>
+                            </div>
+                            <div class="col align-self-end">
+                                <div class="text-danger d-block" id="error_message2b"></div>
+                            </div>
+                        </div>
+
+                        <div class="col col1">
+                            <div class="input-group mb-3 d-inline">
+                                 <select class="form-select" id="inputType2" style="padding: 10;" disabled onchange = "EnableDisableTextBoxMetric2(); sel2()">
+                                     <option  class="p-5 text-muted option" selected value="select">Select the unit</option>
+                                     <option value="mg">Milligrams</option>
+                                     <option value="g">Grams</option>
+                                     <option value="kg">Kilograms</option>
+                                 </select>
+                            </div>
+                            <div class="py-4">
+                                 <input class="" type="text" placeholder="0" id="placeholder2" disabled>
+                            </div>
+                            <div class="py-4">
+                                <div class="col-lg-4 col-md-4 col-sm-6 pb-3">
+                                    <div class="d-inline box"><button type="reset" class="btn replace px-5" onclick="myFunction2()">Reset</button></div>
+                                </div>
+                           </div>
+                             
+                        </div>
+            
+                         <div class="col col2">
+                             <div class="input-group mb-3 d-inline ">
+                                 <select class="form-select" id="resultType2" style="padding: 10;" disabled onchange = "EnableDisableTextBoxMetric2(); errorCheck2()">
+                                     <option  class="p-5 text-muted option" selected value="select">Select the unit</option>
+                                     <option value="pounds">Pounds</option>
+                                     <option value="ounces">Ounces</option>
+                                     <option value="stone">Stone</option>
+                                     <option value="ton">Ton</option>
+                                 </select>
+                             </div>
+                             <div class="py-4">
+                                 <input class="" type="text" placeholder="0" id="outputcal2" disabled>
+                             </div>
+
+                         </div>
+                     </div>
+
+                     <div class="row pt-4" id="toolMB"> 
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="text-danger d-block" id="error_message22a"></div>
+                            </div>
+                            <div class="col align-self-end">
+                                <div class="text-danger d-block" id="error_message22b"></div>
+                            </div>
+                            </div>
+
+                        <div class="col col1">
+                            <div class="input-group mb-3 d-inline ">
+                                <select class="form-select" id="resultType2B" style="padding: 10;" disabled onchange = "EnableDisableTextBoxImperial2();  sel2a()">
+                                    <option  class="p-5 text-muted option" selected value="select">Select the unit</option>
+                                    <option value="pounds">Pounds</option>
+                                    <option value="ounces">Ounces</option>
+                                    <option value="stone">Stone</option>
+                                    <option value="ton">Ton</option>
+                                </select>
+                            </div>
+                            <div class="py-4">
+                                <input class="" type="text" placeholder="0" id="outputcal2B" disabled>
+                            </div>
+                            <div class="py-4">
+                                <div class="col-lg-4 col-md-4 col-sm-6 pb-3">
+                                    <div class="d-inline box"><button type="reset" class="btn replace px-5" onclick="myFunction2()">Reset</button></div>
+                                </div>
+                           </div>
+                            
+                             
+                        </div>
+
+                         <div class="col col2">
+                            <div class="input-group mb-3 d-inline">
+                                <select class="form-select" id="inputType2B" style="padding: 10;" disabled onchange = "EnableDisableTextBoxImperial2(); errorCheck2a()">
+                                    <option  class="p-5 text-muted option" selected value="select">Select the unit</option>
+                                    <option value="mg">Milligrams</option>
+                                    <option value="g">Grams</option>
+                                    <option value="kg">Kilograms</option>
+                                </select>
+                           </div>
+                           <div class="py-4">
+                                <input class="" type="text" placeholder="0" id="placeholder2B" disabled>
+                           </div>
+                           
+                         </div>
+                     </div>
+            
+                     <div class="row pb-5" id="tool2">  
+                         <div class="col-sm-12 col-md-6 col-lg-6 col1">
+                             
+                         </div>
+                     </div>
+                   
+                </div>
+                <div class="col-lg-4 col-md-4 mt-5 text-center">
+                    <div class="bg-primary py-4" style="border-radius: 20px;">
+                        <h2 style="color: white;" class="fs-3 fw-bolder pb-lg-3" >OUTCOME</h2>
+                        <h2 style="color: white;" class="fs-4" id="out2"></h2>
+                    </div>
+                </div>
+                
+                </div>
+
+                </form>
+
+              </div>
+              
+              <div id="volume" class="tabcontent">
+
+                <form id="myform3">
+                
+                <div class="row">
+
+                <div class="col-lg-8 col-md-8 col-sm-12" id="col1">
+                    <p class="">Select the system you want to Convert <span id="text1"><b> From </b></span> to <span id="text1"><b>To</b></span></p>
+                  <div class="d-lg-flex">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="metric3"  onchange="errorCheck3()" onclick="metricEnable3()">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Metric System to Imperial System
+                        </label>
+                    </div>
+                    <div class="form-check ps-lg-5">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="imperial3"  onchange="errorCheck3a()" onclick="imperialEnable3()">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Imperial System to Metric System
+                        </label>
+                    </div>
+                  </div>
+                  <div class="text-danger d-block" id="error_message3"></div>
+    
+                    <div class="row pt-4" id="toolVA">  
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="text-danger d-block" id="error_message3a"></div>
+                            </div>
+                            <div class="col align-self-end">
+                            <div class="text-danger d-block" id="error_message3b"></div>
+                            </div>
+                            </div>
+
+                        <div class="col col1">
+                            <div class="input-group mb-3 d-inline">
+                                 <select class="form-select" id="inputType3" style="padding: 10;" disabled onchange = "EnableDisableTextBoxMetric3(); sel3()">
+                                     <option  class="p-5 text-muted option" selected value="select">Select the unit</option>
+                                     <option value="ml">Millilitres</option>
+                                     <option value="cl">Centilitres</option>
+                                     <option value="l">Litres</option>
+                                 </select>
+                            </div>
+                            <div class="py-4">
+                                 <input class="" type="text" placeholder="0" id="placeholder3"  disabled>
+                            </div>
+                            <div class="py-4">
+                                <div class="col-lg-4 col-md-4 col-sm-6 pb-3">
+                                    <div class="d-inline box"><button type="reset" class="btn replace px-5" onclick="myFunction3()">Reset</button></div>
+                                </div>
+                           </div>
+                             
+                        </div>
+
+                         <div class="col col2">
+                             <div class="input-group mb-3 d-inline ">
+                                 <select class="form-select" id="resultType3" style="padding: 10;" disabled onchange = "EnableDisableTextBoxMetric3(); errorCheck3()">
+                                     <option  class="p-5 text-muted option" selected value="select">Select the unit</option>
+                                     <option value="founces">Fluid Ounces</option>
+                                     <option value="pints">Pints</option>
+                                     <option value="gallons">Gallons</option>
+                                 </select>
+                             </div>
+                             <div class="py-4">
+                                 <input class="" type="text" placeholder="0" id="outputcal3" disabled>
+                             </div>
+
+                            </div>
+                    </div>
+
+                    <div class="row pt-4" id="toolVB">  
+
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="text-danger d-block" id="error_message33a"></div>
+                            </div>
+                            <div class="col align-self-end">
+                                <div class="text-danger d-block" id="error_message33b"></div>
+                            </div>
+                            </div>
+
+                        <div class="col col1">
+                            <div class="input-group mb-3 d-inline">
+                                <select class="form-select" id="resultType3B" style="padding: 10;" disabled onchange = "EnableDisableTextBoxImperial3(); sel3a()">
+                                    <option  class="p-5 text-muted option" selected value="select">Select the unit</option>
+                                    <option value="founces">Fluid Ounces</option>
+                                    <option value="pints">Pints</option>
+                                    <option value="gallons">Gallons</option>
+                                </select>
+                            </div>
+                            <div class="py-4">
+                                <input class="" type="text" placeholder="0" id="outputcal3B" disabled>
+                            </div>
+                            <div class="py-4">
+                                <div class="col-lg-4 col-md-4 col-sm-6 pb-3">
+                                    <div class="d-inline box"><button type="reset" class="btn replace px-5" onclick="myFunction3()">Reset</button></div>
+                                </div>
+                           </div>
+
+                        </div>
+
+                         <div class="col col2">
+
+                            <div class="input-group mb-3 d-inline">
+                                <select class="form-select" id="inputType3B" style="padding: 10;" disabled onchange = "EnableDisableTextBoxImperial3(); errorCheck3a()">
+                                    <option  class="p-5 text-muted option" selected value="select">Select the unit</option>
+                                    <option value="ml">Millilitres</option>
+                                    <option value="cl">Centilitres</option>
+                                    <option value="l">Litres</option>
+                                </select>
+                           </div>
+                           <div class="py-4">
+                                <input class="" type="text" placeholder="0" id="placeholder3B" disabled>
+                           </div>
+                           
+                        </div>
+
+
+                    </div>
+
+
+
+            
+                     <div class="row pb-5" id="tool2">  
+                         <div class="col-sm-12 col-md-6 col-lg-6 col1">
+                             
+                         </div>
+                     </div>
+                   
+                    </div>
+                    <div class="col-lg-4 col-md-4 mt-5 text-center">
+                        <div class="bg-primary py-4" style="border-radius: 20px;">
+                            <h2 style="color: white;" class="fs-3 fw-bolder pb-lg-3" >OUTCOME</h2>
+                            <h2 style="color: white;" class="fs-4" id="out3"></h2>
+                        </div>
+                    </div>
+
+                </div>
+
+                </form>
+
+            </div>
+
+            <div id="temperature" class="tabcontent">
+
+                <form id="myform4">
+                
+                <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12" id="col1">
+                    <p class="">Select the system you want to Convert <span id="text1"><b> From </b></span> to <span id="text1"><b>To</b></span></p>
+                  <div class="d-lg-flex">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="metric5" onchange="errorCheck5()" onclick="metricEnable5()">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Metric System to Imperial System
+                        </label>
+                   </div>
+                    <div class="form-check ps-lg-5">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="imperial5" onchange="errorCheck5a()" onclick="imperialEnable5()">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Imperial System to Metric System
+                        </label>
+                    </div>
+                  </div>
+                  <div class="text-danger d-block" id="error_message5"></div>
+
+    
+                    <div class="row pt-4" id="toolTA">  
+
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="text-danger d-block" id="error_message5a"></div>
+                            </div>
+                            <div class="col align-self-end">
+                            <div class="text-danger d-block" id="error_message5b"></div>
+                            </div>
+                            </div>
+
+                        <div class="col col1">
+                            <div class="input-group mb-3 d-inline">
+                                 <select class="form-select" id="inputType5" style="padding: 10;" disabled onchange = "EnableDisableTextBoxMetric5(); sel5()">
+                                     <option  class="p-5 text-muted option" selected value="select">Select the unit</option>
+                                     <option value="Celsius">Celsius</option>
+
+                                 </select>
+                            </div>
+                            <div class="py-4">
+                                 <input class="" type="text"  placeholder="0" id="placeholder5" disabled>
+                            </div>
+                            <div class="py-4">
+                                <div class="col-lg-4 col-md-4 col-sm-6 pb-3">
+                                    <div class="d-inline box"><button type="reset" class="btn replace px-5" onclick="myFunction5()">Reset</button></div>
+                                </div>
+                           </div>
+                             
+                        </div>
+            
+                         <div class="col col2">
+                             <div class="input-group mb-3 d-inline">
+                                 <select class="form-select " id="resultType5" style="padding: 10;" disabled onchange = "EnableDisableTextBoxMetric5(); errorCheck5()">
+                                     <option  class="p-5 text-muted option" selected value="select">Select the unit</option>
+                                     <option value="Fahrenheit">Fahrenheit</option>
+                                     
+                                 </select>
+                             </div>
+                             <div class="py-4">
+                                <input class="" type="text" placeholder="0" id="outputcal5" disabled>
+                             </div>
+
+                         </div>
+                    </div>
+
+                    <div class="row pt-4" id="toolTB">  
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="text-danger d-block" id="error_message55a"></div>
+                            </div>
+                            <div class="col align-self-end">
+                                <div class="text-danger d-block" id="error_message55b"></div>
+                            </div>
+                            </div>
+
+                        <div class="col col1">
+                            <div class="input-group mb-3 d-inline">
+                                <select class="form-select " id="resultType5B" style="padding: 10;" disabled onchange = "EnableDisableTextBoxImperial5(); sel5a()">
+                                    <option  class="p-5 text-muted option" selected value="select">Select the unit</option>
+                                    <option value="Fahrenheit">Fahrenheit</option>
+
+                                </select>
+                            </div>
+                            <div class="py-4">
+                               <input class="" type="text" placeholder="0" id="outputcal5B"  disabled>
+                            </div>
+                            <div class="py-4">
+                                <div class="col-lg-4 col-md-4 col-sm-6 pb-3">
+                                    <div class="d-inline box"><button type="reset" class="btn replace px-5" onclick="myFunction5()">Reset</button></div>
+                                </div>
+                           </div>
+
+                        </div>
+                     
+                         <div class="col col2">
+                            <div class="input-group mb-3 d-inline">
+                                <select class="form-select" id="inputType5B" style="padding: 10;" disabled onchange = "EnableDisableTextBoxImperial5(); errorCheck5a()">
+                                    <option  class="p-5 text-muted option" value="select" selected>Select the unit</option>
+                                    <option value="Celsius">Celsius</option>
+
+                                </select>
+                           </div>
+                           <div class="py-4">
+                                <input class="" type="text" placeholder="0" id="placeholder5B" disabled>
+                           </div>
+                           
+                         </div>
+                    </div>
+
+
+
+            
+                     <div class="row pb-5" id="tool2">  
+                         <div class="col-sm-12 col-md-6 col-lg-6 col1">
+                             
+                         </div>
+                     </div>
+                      
+                </div>
+                <div class="col-lg-4 col-md-4 mt-5 text-center">
+                    <div class="bg-primary py-4" style="border-radius: 20px;">
+                        <h2 style="color: white;" class="fs-3 fw-bolder pb-lg-3">OUTCOME</h2>
+                        <h2 style="color: white;" class="fs-4" id="out4"></h2>
+                    </div>
+                </div>
+
+                </div>
+
+            </form>
+
+              </div>
+              
+
+            
+        </div>
+    </section>
+    <div id="footer"></div>
+
+    <script>
+        function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            // myFunction`+i`();
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+
+          console.log("myFunction");
+
+        }
+
+// function myFunction(){
+
+function myFunction1() {
+  document.getElementById("myform1").reset();
+
+  console.log("disable1");
+
+  $(`#outputcal1B`).attr("disabled", "disabled");
+  $(`#inputType1`).attr("disabled", "disabled");
+  $(`#resultType1`).attr("disabled", "disabled");
+  $(`#inputType1B`).attr("disabled", "disabled");
+  $(`#resultType1B`).attr("disabled", "disabled");
+  $(`#placeholder1`).attr("disabled", "disabled");
+  resetOutput();
+//   $(`#out`+i).attr("disabled", "disabled");
+  
+}
+
+
+function myFunction2() {
+  document.getElementById("myform2").reset();
+
+  console.log("disable2");
+
+  $(`#outputcal2B`).attr("disabled", "disabled");
+  $(`#inputType2`).attr("disabled", "disabled");
+  $(`#resultType2`).attr("disabled", "disabled");
+  $(`#inputType2B`).attr("disabled", "disabled");
+  $(`#resultType2B`).attr("disabled", "disabled");
+  $(`#placeholder2`).attr("disabled", "disabled");
+  resetOutput();
+//   $(`#out`+i).attr("disabled", "disabled");
+  
+}
+
+function myFunction3() {
+  document.getElementById("myform3").reset();
+
+  console.log("disable3");
+
+  $(`#outputcal3B`).attr("disabled", "disabled");
+  $(`#inputType3`).attr("disabled", "disabled");
+  $(`#resultType3`).attr("disabled", "disabled");
+  $(`#inputType3B`).attr("disabled", "disabled");
+  $(`#resultType3B`).attr("disabled", "disabled");
+  $(`#placeholder3`).attr("disabled", "disabled");
+  resetOutput();
+//   $(`#out`+i).attr("disabled", "disabled");
+  
+}
+
+function myFunction5() {
+  document.getElementById("myform4").reset();
+
+  console.log("disable5");
+
+  $(`#outputcal5B`).attr("disabled", "disabled");
+  $(`#inputType5`).attr("disabled", "disabled");
+  $(`#resultType5`).attr("disabled", "disabled");
+  $(`#inputType5B`).attr("disabled", "disabled");
+  $(`#resultType5B`).attr("disabled", "disabled");
+  $(`#placeholder5`).attr("disabled", "disabled");
+  resetOutput();
+//   $(`#out`+i).attr("disabled", "disabled");
+  
+}
+
+// }
+
+
+        </script>
+
+
+
+    <script src="./assets/js/index.js"></script>
+
+<script>
+    function refreshPage(){
+        window.location.reload();
+    } 
+</script>
+
+<script>
+
+    $('#toolA').show()
+    $('#toolB').hide()
+    var metric = document.getElementById('metric1');
+    var imperial = document.getElementById('imperial1');
+    var inputType = document.getElementById('inputType1');
+    var resultType = document.getElementById('resultType1');
+    var input = document.getElementById('placeholder1');
+    // input.disabled = true
+
+    // metric.addEventListener("change", ht);
+    // imperial.addEventListener("change", ht);
+    metric.addEventListener("change", ht);
+    imperial.addEventListener("change", ht);
+    inputType.addEventListener("change", ht);
+    resultType.addEventListener("change", ht);
+    input.addEventListener("keyup",ht);
+    metric.addEventListener("change", take);
+    imperial.addEventListener("change", take);
+    input.addEventListener("keyup",hj);
+    inputType.addEventListener("change", hj);
+    resultType.addEventListener("change", hj);
+    metric.addEventListener("change", hj);
+    imperial.addEventListener("change", hj);
+
+
+    function ht(){
+        console.log("ht");
+        var errortxt = "";
+        if(metric.checked == true){
+            if(imperial.checked == true){
+                errortxt = "select the convertor metric";
+                console.log("select the convertor")
+                document.getElementById("error_message").innerHTML = errortxt;
+            }  else if (imperial.checked == true){
+                console.log("imperial checked")
+                errortxt = "";
+                document.getElementById("error_message").innerHTML = errortxt;
+            }
+        }
+        else if(imperial.checked == true){
+            if(metric.checked == true){
+                errortxt = "select the convertor imperail";
+                console.log("select the convertor")
+                document.getElementById("error_message").innerHTML = errortxt;
+            }
+            else if (metric.checked == true){
+                console.log("metric checked")
+                errortxt = "";
+                document.getElementById("error_message").innerHTML = errortxt;
+            } 
+        }
+        
+    }
+
+    function take(){
+        console.log(metric.checked);
+        console.log(imperial.checked);
+        if(metric.checked) {
+            $('#toolA').show()
+            $('#toolB').hide()
+            var inputType = document.getElementById('inputType1');
+            var resultType = document.getElementById('resultType1');
+            var input = document.getElementById('placeholder1');
+            var output = document.getElementById('outputcal1');
+            var value1, value2;
+
+            input.addEventListener("keyup",myresult);
+            // input.addEventListener("keyup",hj);
+            inputType.addEventListener("change", myresult);
+            resultType.addEventListener("change", myresult);
+
+            
+            function myresult(){
+                value1 = inputType.value;
+                value2 = resultType.value; 
+                if (value1=="select"){
+                    document.getElementById("error_message").innerHTML = "<p>" + errortxt + "</p>";
+                }
+                else if (value2=="select"){
+                    document.getElementById("error_message").innerHTML = "<p>" + errortxt + "</p>";
+                }
+
+                if (value1 == "mm") {
+                    if (value2 == "in"){
+                        output.value = Number(input.value) * 0.039 ;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "ft"){
+                        output.value = Number(input.value) * 0.00328084;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "yd"){
+                        output.value = Number(input.value) * 0.00109361;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "mi"){
+                        output.value = Number(input.value) * 6.21E-07;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2=="select"){
+                        document.getElementById("error_message").innerHTML = "<p>" + errortxt + "</p>";
+                    }
+                }
+                else if (value1 == "cm") {
+                    if (value2 == "in"){
+                        output.value = Number(input.value) * 0.393701 ;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "ft"){
+                        output.value = Number(input.value) * 0.0328084;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "yd"){
+                        output.value = Number(input.value) * 0.010936133;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "mi"){
+                        output.value = Number(input.value) * 0.0000062137;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    }
+                }
+                else if (value1 == "m") {
+                    if (value2 == "in"){
+                        output.value = Number(input.value) * 39.3701;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "ft"){
+                        output.value = Number(input.value) * 3.2808;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "yd"){
+                        output.value = Number(input.value) * 1.09361;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "mi"){
+                        output.value = Number(input.value) * 0.000621371;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    }
+                }
+                else if (value1 == "km") {
+                    if (value2 == "in"){
+                        output.value = Number(input.value) * 39370.1;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "ft"){
+                        output.value = Number(input.value) * 3280.84;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "yd"){
+                        output.value = Number(input.value) * 1093.61;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "mi"){
+                        output.value = Number(input.value) * 0.621371;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    }
+                }
+                
+
+            }
+        }else if(imperial.checked) {
+            console.log("imperial");
+            $('#toolA').hide()
+            $('#toolB').show()
+            var inputType = document.getElementById('inputType1B');
+            var resultType = document.getElementById('resultType1B');
+            var input = document.getElementById('outputcal1B');
+            var output = document.getElementById('placeholder1B');
+            var value1, value2;
+            console.log(inputType);
+            console.log(resultType);
+            console.log(input);
+            console.log(output);
+
+            input.addEventListener("keyup",myresult1);
+            inputType.addEventListener("change", myresult1);
+            resultType.addEventListener("change", myresult1);
+
+            value1 = inputType.value;
+            value2 = resultType.value;
+            input.addEventListener("keyup",hj);
+            inputType.addEventListener("change", hj);
+            resultType.addEventListener("change", hj);
+    
+
+            function myresult1(){
+                value1 = resultType.value;
+                value2 = inputType.value;
+
+                console.log(value1);
+                console.log(value2);
+
+                if (value1 == "in") {
+                    if (value2 == "mm"){
+                        output.value = Number(input.value) *  25.4;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "cm"){
+                        output.value = Number(input.value) * 2.54;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "m"){
+                        output.value = Number(input.value) * 0.0254;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "km"){
+                        output.value = Number(input.value) * 0.0254;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    }
+                }
+                else if (value1 == "ft") {
+                    if (value2 == "mm"){
+                        output.value = Number(input.value) *  304.8;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "cm"){
+                        output.value = Number(input.value) * 30.48;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "m"){
+                        output.value = Number(input.value) * 0.3048;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "km"){
+                        output.value = Number(input.value) * 0.0003048;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    }
+                }
+                else if (value1 == "yd") {
+                    if (value2 == "mm"){
+                        output.value = Number(input.value) *  914.4;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "cm"){
+                        output.value = Number(input.value) * 91.44;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "m"){
+                        output.value = Number(input.value) * 0.9144;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "km"){
+                        output.value = Number(input.value) * 0.0009144;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    }
+                }
+                else if (value1 == "mi") {
+                    if (value2 == "mm"){
+                        output.value = Number(input.value) *  1.61E+06;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "cm"){
+                        output.value = Number(input.value) * 160934;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "m"){
+                        output.value = Number(input.value) * 1609.34;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    } else if (value2 == "km"){
+                        output.value = Number(input.value) * 1.60934;
+                        document.getElementById("out1").innerHTML = (Number(output.value));
+                    }
+                }
+
+            }
+        }
+    }
+</script>
+
+
+<!-- Mass -->
+
+
+<script>
+    $('#toolMA').show()
+    $('#toolMB').hide()
+    var metric2 = document.getElementById('metric2');
+    var imperial2 = document.getElementById('imperial2');
+    var inputType2 = document.getElementById('inputType2');
+    var resultType2 = document.getElementById('resultType2');
+    var input = document.getElementById('placeholder2');
+
+    metric2.addEventListener("change", take2);
+    imperial2.addEventListener("change", take2);
+
+    metric2.addEventListener("change", ht);
+    imperial2.addEventListener("change", ht);
+    inputType2.addEventListener("change", ht);
+    resultType2.addEventListener("change", ht);
+    input.addEventListener("keyup",ht);
+
+    input.addEventListener("keyup",hj);
+    inputType2.addEventListener("change", hj);
+    resultType2.addEventListener("change", hj);
+
+    function take2(){
+        
+        console.log(metric2.checked);
+        console.log(imperial2.checked);
+        if(metric2.checked) {
+            $('#toolMA').show()
+            $('#toolMB').hide()
+            var inputType2 = document.getElementById('inputType2');
+            var resultType2 = document.getElementById('resultType2');
+            var input = document.getElementById('placeholder2');
+            var output = document.getElementById('outputcal2');
+            var value1, value2;
+
+            input.addEventListener("keyup",myresultMass);
+            inputType2.addEventListener("change", myresultMass);
+            resultType2.addEventListener("change", myresultMass);
+
+            value1 = inputType2.value;
+            value2 = resultType2.value;
+
+            function myresultMass(){
+                value1 = inputType2.value;
+                value2 = resultType2.value;
+
+                if (value1 == "mg") {
+                if (value2 == "pounds"){
+                    output.value = Number(input.value) * 2.20E-06;
+                    document.getElementById("out2").innerHTML = (Number(output.value));
+                } else if (value2 == "ounces"){
+                    output.value = Number(input.value) * 3.53E-05;
+                    document.getElementById("out2").innerHTML = (Number(output.value));
+                } else if (value2 == "stone"){
+                    output.value = Number(input.value) * 1.57E-07;
+                    document.getElementById("out2").innerHTML = (Number(output.value));
+                } else if (value2 == "ton"){
+                    output.value = Number(input.value) * 1.10E-09;
+                    document.getElementById("out2").innerHTML = (Number(output.value));
+                }
+            }
+            else if (value1 == "g") {
+                if (value2 == "pounds"){
+                    output.value = Number(input.value) * 0.00220462;
+                    document.getElementById("out2").innerHTML = (Number(output.value));
+                } else if (value2 == "ounces"){
+                    output.value = Number(input.value) * 0.035274;
+                    document.getElementById("out2").innerHTML = (Number(output.value));
+                } else if (value2 == "stone"){
+                    output.value = Number(input.value) * 0.000157473;
+                    document.getElementById("out2").innerHTML = (Number(output.value));
+                } else if (value2 == "ton"){
+                    output.value = Number(input.value) * 1.10E-06;
+                    document.getElementById("out2").innerHTML = (Number(output.value));
+                }
+            }
+            else if (value1 == "kg") {
+                if (value2 == "pounds"){
+                    output.value = Number(input.value) * 2.20462;
+                    document.getElementById("out2").innerHTML = (Number(output.value));
+                } else if (value2 == "ounces"){
+                    output.value = Number(input.value) * 35.274;
+                    document.getElementById("out2").innerHTML = (Number(output.value));
+                } else if (value2 == "stone"){
+                    output.value = Number(input.value) * 0.157473;
+                    document.getElementById("out2").innerHTML = (Number(output.value));
+                } else if (value2 == "ton"){
+                     output.value = Number(input.value) * 0.001;
+                     document.getElementById("out2").innerHTML = (Number(output.value));
+                }
+            }  
+
+
+            }
+
+        }else if(imperial2.checked) {
+            $('#toolMA').hide()
+            $('#toolMB').show()
+            var inputType2 = document.getElementById('inputType2B');
+            var resultType2 = document.getElementById('resultType2B');
+            var input = document.getElementById('outputcal2B');
+            var output = document.getElementById('placeholder2B');
+            var value1, value2;
+            console.log(inputType2);
+            console.log(resultType2);
+            console.log(input);
+            console.log(output);
+
+            input.addEventListener("keyup",myresult1);
+            inputType2.addEventListener("change", myresult1);
+            resultType2.addEventListener("change", myresult1);
+
+            input.addEventListener("keyup",hj);
+            inputType2.addEventListener("change", hj);
+            resultType2.addEventListener("change", hj);
+
+            value1 = inputType2.value;
+            value2 = resultType2.value;
+
+            function myresult1(){
+                value1 = resultType2.value;
+                value2 = inputType2.value;
+
+                console.log(value1);
+                console.log(value2);
+
+                if (value1 == "pounds") {
+                    if (value2 == "mg"){
+                        output.value = Number(input.value)*453592;
+                        document.getElementById("out2").innerHTML = (Number(output.value));
+                    } else if (value2 == "g"){
+                        output.value = Number(input.value)*453.592;
+                        document.getElementById("out2").innerHTML = (Number(output.value));
+                    } else if (value2 == "kg"){
+                        output.value = Number(input.value)*0.453592;
+                        document.getElementById("out2").innerHTML = (Number(output.value));
+                    }    
+                }
+                else if (value1 == "ounces") {
+                    if (value2 == "mg"){
+                        output.value = Number(input.value)*28349.5;
+                        document.getElementById("out2").innerHTML = (Number(output.value));
+                    } else if (value2 == "g"){
+                        output.value = Number(input.value)*28.3495;
+                        document.getElementById("out2").innerHTML = (Number(output.value));
+                    } else if (value2 == "kg"){
+                        output.value = Number(input.value)*0.0283495;
+                        document.getElementById("out2").innerHTML = (Number(output.value));
+                    } 
+                }
+                else if (value1 == "stone") {
+                    if (value2 == "mg"){
+                        output.value = Number(input.value)*6.35E+06;
+                        document.getElementById("out2").innerHTML = (Number(output.value));
+                    } else if (value2 == "g"){
+                        output.value = Number(input.value)*6350.29;
+                        document.getElementById("out2").innerHTML = (Number(output.value));
+                    } else if (value2 == "kg"){
+                        output.value = Number(input.value)*6.35029;
+                        document.getElementById("out2").innerHTML = (Number(output.value));
+                    } 
+                }
+                else if (value1 == "ton") {
+                    if (value2 == "mg"){
+                        output.value = Number(input.value)/1.10E-09;
+                        document.getElementById("out2").innerHTML = (Number(output.value));
+                    } else if (value2 == "g"){
+                        output.value = Number(input.value)/1.10E-06;
+                        document.getElementById("out2").innerHTML = (Number(output.value));
+                    } else if (value2 == "kg"){
+                        output.value = Number(input.value)*1000;
+                        document.getElementById("out2").innerHTML = (Number(output.value));
+                    } 
+                }
+
+            }
+        }
+    }
+</script>
+
+
+<!-- Volume -->
+
+
+<script>
+    $('#toolVA').show()
+    $('#toolVB').hide()
+    var metric3 = document.getElementById('metric3');
+    var imperial3 = document.getElementById('imperial3');
+    var inputType3 = document.getElementById('inputType3');
+    var resultType3 = document.getElementById('resultType3');
+    var input = document.getElementById('placeholder3');
+
+    metric3.addEventListener("change", take3);
+    imperial3.addEventListener("change", take3);
+
+    metric3.addEventListener("change", ht);
+    imperial3.addEventListener("change", ht);
+    inputType3.addEventListener("change", ht);
+    resultType3.addEventListener("change", ht);
+    input.addEventListener("keyup",ht);
+
+    input.addEventListener("keyup",hj);
+    inputType3.addEventListener("change", hj);
+    resultType3.addEventListener("change", hj);
+
+
+    function ht(){
+        var errortxt = "";
+        if(metric3.checked == true){
+            if(imperial3.checked == true){
+                errortxt = "select the convertor metric";
+                console.log("select the convertor")
+                document.getElementById("error_message3").innerHTML = errortxt;
+            }  else if (imperial3.checked == true){
+                console.log("imperial checked")
+                errortxt = "";
+                document.getElementById("error_message3").innerHTML = errortxt;
+            }
+        }
+        else if(imperial3.checked == true){
+            if(metric3.checked == true){
+                errortxt = "select the convertor imperail";
+                console.log("select the convertor")
+                document.getElementById("error_message3").innerHTML = errortxt;
+            }
+            else if (metric3.checked == true){
+                console.log("metric checked")
+                errortxt = "";
+                document.getElementById("error_message3").innerHTML = errortxt;
+            } 
+        }
+        
+    }
+
+    function take3(){
+        console.log(metric3.checked);
+        console.log(imperial3.checked);
+        if(metric3.checked) {
+            $('#toolVA').show()
+            $('#toolVB').hide()
+            var inputType3 = document.getElementById('inputType3');
+            var resultType3 = document.getElementById('resultType3');
+            var input = document.getElementById('placeholder3');
+            var output = document.getElementById('outputcal3');
+            var value1, value2;
+
+            input.addEventListener("keyup",myresultVolume);
+            inputType3.addEventListener("change", myresultVolume);
+            resultType3.addEventListener("change", myresultVolume);
+
+            value1 = inputType3.value;
+            value2 = resultType3.value;
+
+            function myresultVolume(){
+                value1 = inputType3.value;
+                value2 = resultType3.value;
+
+                if (value1 == "ml") {
+            if (value2 == "founces"){
+                    output.value = Number(input.value) * 0.033814;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                } else if (value2 == "pints"){
+                    output.value = Number(input.value) * 0.00211338;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                } else if (value2 == "gallons"){
+                    output.value = Number(input.value) * 0.000264172;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                }
+            }
+        else if (value1 == "cl") {
+            if (value2 == "founces"){
+                    output.value = Number(input.value) * 0.33814;
+                    document.getElementById("out3").innerHTML = (Number(output.value));;
+                } else if (value2 == "pints"){
+                    output.value = Number(input.value) * 0.0211338;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                } else if (value2 == "gallons"){
+                    output.value = Number(input.value) * 0.00264172;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                }
+        } 
+        else if (value1 == "l") {
+            if (value2 == "founces"){
+                    output.value = Number(input.value) * 33.814;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                } else if (value2 == "pints"){
+                    output.value = Number(input.value) * 2.11338;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                } else if (value2 == "gallons"){
+                    output.value = Number(input.value) * 0.264172;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                }
+        } 
+
+
+            }
+
+        }else if(imperial3.checked) {
+            $('#toolVA').hide()
+            $('#toolVB').show()
+            var inputType3 = document.getElementById('inputType3B');
+            var resultType3 = document.getElementById('resultType3B');
+            var input = document.getElementById('outputcal3B');
+            var output = document.getElementById('placeholder3B');
+            var value1, value2;
+            console.log(inputType3);
+            console.log(resultType3);
+            console.log(input);
+            console.log(output);
+
+            input.addEventListener("keyup",myresult1);
+            inputType3.addEventListener("change", myresult1);
+            resultType3.addEventListener("change", myresult1);
+
+            input.addEventListener("keyup",hj);
+            inputType3.addEventListener("change", hj);
+            resultType3.addEventListener("change", hj);
+
+            value1 = inputType3.value;
+            value2 = resultType3.value;
+
+
+            function myresult1(){
+                value1 = resultType3.value;
+                value2 = inputType3.value;
+
+                console.log(value1);
+                console.log(value2);
+
+                if (value1 == "founces") {
+            if (value2 == "ml"){
+                    output.value = Number(input.value) * 29.5735;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                } else if (value2 == "cl"){
+                    output.value = Number(input.value) * 2.95735;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                } else if (value2 == "l"){
+                    output.value = Number(input.value) * 0.0295735;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                }
+            }
+        else if (value1 == "pints") {
+            if (value2 == "ml"){
+                    output.value = Number(input.value) * 568.261;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                } else if (value2 == "cl"){
+                    output.value = Number(input.value) * 47.3176;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                } else if (value2 == "l"){
+                    output.value = Number(input.value) * 0.568261;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                }
+        } 
+        else if (value1 == "gallons") {
+            if (value2 == "ml"){
+                    output.value = Number(input.value) * 4546.09;
+                    document.getElementById("out3").innerHTML = (Number(output.value));;
+                } else if (value2 == "cl"){
+                    output.value = Number(input.value) * 454.609;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                } else if (value2 == "l"){
+                    output.value = Number(input.value) * 4.54609;
+                    document.getElementById("out3").innerHTML = (Number(output.value));
+                }
+        } 
+
+            }
+        }
+    }
+</script>
+
+
+
+<!-- Temp -->
+
+
+<script>
+    $('#toolTA').show()
+    $('#toolTB').hide()
+    var metric5 = document.getElementById('metric5');
+    var imperial5 = document.getElementById('imperial5');
+    var inputType5 = document.getElementById('inputType5');
+    var resultType5 = document.getElementById('resultType5');
+    var input = document.getElementById('placeholder5');
+
+    metric5.addEventListener("change", take5);
+    imperial5.addEventListener("change", take5);
+    
+    
+    metric5.addEventListener("change", ht);
+    imperial5.addEventListener("change", ht);
+    inputType5.addEventListener("change", ht);
+    resultType5.addEventListener("change", ht);
+    input.addEventListener("keyup",ht);
+
+    input.addEventListener("keyup",hj);
+    inputType5.addEventListener("change", hj);
+    resultType5.addEventListener("change", hj);
+
+    
+
+    function ht(){
+        var errortxt = "";
+        if(metric5.checked == true){
+            if(imperial5.checked == true){
+                errortxt = "select the convertor metric";
+                console.log("select the convertor")
+                document.getElementById("error_message5").innerHTML = errortxt;
+            }  else if (imperial5.checked == true){
+                console.log("imperial checked")
+                errortxt = "";
+                document.getElementById("error_message5").innerHTML = errortxt;
+            }
+        }
+        else if(imperial5.checked == true){
+            if(metric5.checked == true){
+                errortxt = "select the convertor imperail";
+                console.log("select the convertor")
+                document.getElementById("error_message5").innerHTML = errortxt;
+            }
+            else if (metric5.checked == true){
+                console.log("metric checked")
+                errortxt = "";
+                document.getElementById("error_message5").innerHTML = errortxt;
+            } 
+        }
+        
+    }
+
+
+    function take5(){
+        console.log(metric5.checked);
+        console.log(imperial5.checked);
+        if(metric5.checked) {
+            $('#toolTA').show()
+            $('#toolTB').hide()
+            var inputType5 = document.getElementById('inputType5');
+            var resultType5 = document.getElementById('resultType5');
+            var input = document.getElementById('placeholder5');
+            var output = document.getElementById('outputcal5');
+            var value1, value2;
+
+            input.addEventListener("keyup",myresultTemp);
+            // inputType5.addEventListener("change", resetOutput);
+            // resultType5.addEventListener("change", resetOutput);
+
+            value1 = inputType5.value;
+            value2 = resultType5.value;
+
+            function myresultTemp(){
+                value1 = inputType5.value;
+                value2 = resultType5.value;
+
+                if (value1 == "Celsius") {
+            if (value2 == "Fahrenheit"){
+                output.value = (Number(input.value) * (9 / 5)) + 32;
+                document.getElementById("out4").innerHTML = (Number(output.value));
+            } 
+        } 
+
+
+            }
+
+        }else if(imperial5.checked) {
+            console.log("imperial Running");
+            $('#toolTA').hide()
+            $('#toolTB').show()
+            var inputType5 = document.getElementById('inputType5B');
+            var resultType5 = document.getElementById('resultType5B');
+            var input = document.getElementById('outputcal5B');
+            var output = document.getElementById('placeholder5B');
+            var value1, value2;
+            console.log(inputType5);
+            console.log(resultType5);
+            console.log(input);
+            console.log(output);
+
+            input.addEventListener("keyup",myresult1);
+            inputType5.addEventListener("change", myresult1);
+            resultType5.addEventListener("change", myresult1);
+            input.addEventListener("keyup",hj);
+            inputType5.addEventListener("change", hj);
+            resultType5.addEventListener("change", hj);
+
+            value1 = inputType5.value;
+            value2 = resultType5.value;
+
+
+            function myresult1(){
+
+                console.log("result 1 Running");
+
+                var value1 = resultType5.value;
+                var value2 = inputType5.value;
+
+                console.log(value1);
+                console.log(value2);
+
+                if (value1 == "Fahrenheit") {
+            if (value2 == "Celsius"){
+                console.log("If Running");
+                output.value = ((Number(input.value)- 32)* (5 / 9));
+                // output.value = ((Number(input.value)- 32) * (5 / 9)) ;
+                document.getElementById("out4").innerHTML = (Number(output.value));
+                console.log(input.value);
+                console.log(output.value);
+                console.log("End");
+            } 
+        } 
+
+            }
+        }
+    }
+
+
+
+function metricEnable1() {
+
+console.log(1);
+
+    if ($("#metric1").is(":checked")) 
+    {
+        $("#inputType1").removeAttr("disabled");
+        $("#resultType1").removeAttr("disabled");
+        $("#inputType1").focus();
+    } 
+    else 
+    {
+        $("#inputType1").attr("disabled", "disabled");
+        $("#resultType1").attr("disabled", "disabled");
+    }
+}
+
+
+
+// ___-----_____-----
+
+function sel1(){
+
+
+    var val = inputType1.options[inputType1.selectedIndex].value;
+    // var i = 1;
+    if(val!='select'){
+        console.log("selected");
+        $("#resultType1").focus();
+    }
+    else{
+        console.log("not selected");
+    }
+
+}
+
+function errorCheck1(){
+    
+var inputType1 = document.getElementById('inputType1');
+var resultType1 = document.getElementById('resultType1');
+
+value1 = inputType1.value;
+value2 = resultType1.value;
+
+
+    if (value1=='select')
+        {
+            if (value2=='select')
+            {
+                document.getElementById("error_message1a").innerHTML = "<p>" + "select the unit" + "</p>";
+                document.getElementById("error_message1b").innerHTML = "";
+            }
+            else if (value2!='select')
+            {
+                document.getElementById("error_message1a").innerHTML = "<p>" + "select the unit" + "</p>";
+                document.getElementById("error_message1b").innerHTML = "";
+            }
+        }
+        else if (value1!='select')
+        {
+            if (value2=='select')
+            {
+                document.getElementById("error_message1a").innerHTML = "";
+                document.getElementById("error_message1b").innerHTML = "<p>" + "select the unit" + "</p>";
+            }
+            else if (value2!='select')
+            {
+                document.getElementById("error_message1a").innerHTML = "";
+                document.getElementById("error_message1b").innerHTML = "";
+            }
+        }
+
+        console.log("error checked");
+
+}
+
+
+function imperialEnable1() {
+
+console.log(2);
+
+
+if ($("#imperial1").is(":checked")) {
+$("#inputType1B").removeAttr("disabled");
+$("#resultType1B").removeAttr("disabled");
+$("#resultType1B").focus();
+console.log("first");
+} else {
+$("#inputType1B").attr("disabled", "disabled");
+$("#resultType1B").attr("disabled", "disabled");
+}
+}
+
+
+function sel1a(){
+
+
+var val = resultType1B.options[resultType1B.selectedIndex].value;
+// var i = 1;
+if(val!='select'){
+    console.log("selected");
+    $("#inputType1B").focus();
+}
+else{
+    console.log("not selected");
+}
+
+}
+
+
+function errorCheck1a(){
+    
+    var inputType1 = document.getElementById('resultType1B');
+    var resultType1 = document.getElementById('inputType1B');
+    
+    value1 = inputType1.value;
+    value2 = resultType1.value;
+    
+    
+        if (value1=='select')
+            {
+                if (value2=='select')
+                {
+                    document.getElementById("error_message11a").innerHTML = "<p>" + "select the unit" + "</p>";
+                    document.getElementById("error_message11b").innerHTML = "";
+                }
+                else if (value2!='select')
+                {
+                    document.getElementById("error_message11a").innerHTML = "<p>" + "select the unit" + "</p>";
+                    document.getElementById("error_message11b").innerHTML = "";
+                }
+            }
+            else if (value1!='select')
+            {
+                if (value2=='select')
+                {
+                    document.getElementById("error_message11a").innerHTML = "";
+                    document.getElementById("error_message11b").innerHTML = "<p>" + "select the unit" + "</p>";
+                }
+                else if (value2!='select')
+                {
+                    document.getElementById("error_message11a").innerHTML = "";
+                    document.getElementById("error_message11b").innerHTML = "";
+                }
+            }
+    
+            console.log("error checked");
+    
+    }
+
+
+
+
+function EnableDisableTextBoxMetric() {
+    console.log("a");
+var selectedValue = inputType1.options[inputType1.selectedIndex].value;
+var selectedValueImperial = resultType1.options[resultType1.selectedIndex].value;
+console.log(selectedValue);
+console.log(selectedValueImperial);
+if(selectedValue!= "select" && selectedValueImperial!= "select"){
+    $("#placeholder1").removeAttr("disabled");
+    $("#placeholder1").focus(); 
+}
+else{
+$("#placeholder1").attr("disabled", "disabled");
+
+}
+errorCheck1();
+}
+
+
+function EnableDisableTextBoxImperial(){
+    console.log("b");
+    var selectedValue = inputType1B.options[inputType1B.selectedIndex].value;
+    var selectedValueImperial = resultType1B.options[resultType1B.selectedIndex].value;
+    console.log(selectedValue);
+    console.log(selectedValueImperial);
+    if(selectedValue!= "select" && selectedValueImperial!= "select")
+    {
+        $("#outputcal1B").removeAttr("disabled");
+        $("#outputcal1B").focus(); 
+    }
+    else
+    {
+        $("#outputcal1B").attr("disabled", "disabled");
+    }
+    errorCheck1a();
+
+}
+
+
+function metricEnable2() {
+
+console.log(1);
+
+    if ($("#metric2").is(":checked")) 
+    {
+        $("#inputType2").removeAttr("disabled");
+        $("#resultType2").removeAttr("disabled");
+        $("#inputType2").focus();
+    } 
+    else 
+    {
+        $("#inputType2").attr("disabled", "disabled");
+        $("#resultType2").attr("disabled", "disabled");
+    }
+}
+
+
+function sel2(){
+
+var val = inputType2.options[inputType2.selectedIndex].value;
+// var i = 1;
+if(val!='select'){
+    console.log("selected");
+    $("#resultType2").focus();
+}
+else{
+    console.log("not selected");
+}
+
+}
+
+function errorCheck2(){
+    
+    var inputType2 = document.getElementById('inputType2');
+    var resultType2 = document.getElementById('resultType2');
+    
+    value1 = inputType2.value;
+    value2 = resultType2.value;
+    
+    
+        if (value1=='select')
+            {
+                if (value2=='select')
+                {
+                    document.getElementById("error_message2a").innerHTML = "<p>" + "select the unit" + "</p>";
+                    document.getElementById("error_message2b").innerHTML = "";
+                }
+                else if (value2!='select')
+                {
+                    document.getElementById("error_message2a").innerHTML = "<p>" + "select the unit" + "</p>";
+                    document.getElementById("error_message2b").innerHTML = "";
+                }
+            }
+            else if (value1!='select')
+            {
+                if (value2=='select')
+                {
+                    document.getElementById("error_message2a").innerHTML = "";
+                    document.getElementById("error_message2b").innerHTML = "<p>" + "select the unit" + "</p>";
+                }
+                else if (value2!='select')
+                {
+                    document.getElementById("error_message2a").innerHTML = "";
+                    document.getElementById("error_message2b").innerHTML = "";
+                }
+            }
+    
+            console.log("error checked");
+    
+    }
+
+
+function sel2a(){
+
+
+var val = resultType2B.options[resultType2B.selectedIndex].value;
+// var i = 1;
+if(val!='select'){
+    console.log("selected");
+    $("#inputType2B").focus();
+}
+else{
+    console.log("not selected");
+}
+
+}
+
+
+
+    function errorCheck2a(){
+    
+    var inputType2 = document.getElementById('resultType2B');
+    var resultType2 = document.getElementById('inputType2B');
+    
+    value1 = inputType2.value;
+    value2 = resultType2.value;
+    
+    
+        if (value1=='select')
+            {
+                if (value2=='select')
+                {
+                    document.getElementById("error_message22a").innerHTML = "<p>" + "select the unit" + "</p>";
+                    document.getElementById("error_message22b").innerHTML = "";
+                }
+                else if (value2!='select')
+                {
+                    document.getElementById("error_message22a").innerHTML = "<p>" + "select the unit" + "</p>";
+                    document.getElementById("error_message22b").innerHTML = "";
+                }
+            }
+            else if (value1!='select')
+            {
+                if (value2=='select')
+                {
+                    document.getElementById("error_message22a").innerHTML = "";
+                    document.getElementById("error_message22b").innerHTML = "<p>" + "select the unit" + "</p>";
+                }
+                else if (value2!='select')
+                {
+                    document.getElementById("error_message22a").innerHTML = "";
+                    document.getElementById("error_message22b").innerHTML = "";
+                }
+            }
+    
+            console.log("error checked");
+    
+    }
+
+function imperialEnable2() {
+
+console.log(2);
+
+if ($("#imperial2").is(":checked")) {
+$("#inputType2B").removeAttr("disabled");
+$("#resultType2B").removeAttr("disabled");
+// $("#placeholder").focus();
+} else {
+$("#inputType2B").attr("disabled", "disabled");
+$("#resultType2B").attr("disabled", "disabled");
+}
+}
+
+function EnableDisableTextBoxMetric2() {
+    console.log("a");
+var selectedValue = inputType2.options[inputType2.selectedIndex].value;
+var selectedValueImperial = resultType2.options[resultType2.selectedIndex].value;
+console.log(selectedValue);
+console.log(selectedValueImperial);
+if(selectedValue!= "select" && selectedValueImperial!= "select"){
+    $("#placeholder2").removeAttr("disabled");
+    $("#placeholder2").focus(); 
+}
+else{
+$("#placeholder2").attr("disabled", "disabled");
+}
+errorCheck2();
+}
+
+
+function EnableDisableTextBoxImperial2(){
+    console.log("b");
+    var selectedValue = inputType2B.options[inputType2B.selectedIndex].value;
+    var selectedValueImperial = resultType2B.options[resultType2B.selectedIndex].value;
+    console.log(selectedValue);
+    console.log(selectedValueImperial);
+    if(selectedValue!= "select" && selectedValueImperial!= "select")
+    {
+        $("#outputcal2B").removeAttr("disabled");
+        $("#outputcal2B").focus(); 
+    }
+    else
+    {
+        $("#outputcal2B").attr("disabled", "disabled");
+    }
+    errorCheck2a();
+}
+
+
+function metricEnable3() {
+
+console.log(1);
+
+    if ($("#metric3").is(":checked")) 
+    {
+        $("#inputType3").removeAttr("disabled");
+        $("#resultType3").removeAttr("disabled");
+        $("#inputType3").focus();
+    } 
+    else 
+    {
+        $("#inputType3").attr("disabled", "disabled");
+        $("#resultType3").attr("disabled", "disabled");
+    }
+}
+
+function sel3(){
+
+var val = inputType3.options[inputType3.selectedIndex].value;
+// var i = 1;
+if(val!='select'){
+    console.log("selected");
+    $("#resultType3").focus();
+}
+else{
+    console.log("not selected");
+}
+
+}
+
+
+function errorCheck3(){
+    
+    var inputType3 = document.getElementById('inputType3');
+    var resultType3 = document.getElementById('resultType3');
+    
+    value1 = inputType3.value;
+    value2 = resultType3.value;
+    
+    
+        if (value1=='select')
+            {
+                if (value2=='select')
+                {
+                    document.getElementById("error_message3a").innerHTML = "<p>" + "select the unit" + "</p>";
+                    document.getElementById("error_message3b").innerHTML = "";
+                }
+                else if (value2!='select')
+                {
+                    document.getElementById("error_message3a").innerHTML = "<p>" + "select the unit" + "</p>";
+                    document.getElementById("error_message3b").innerHTML = "";
+                }
+            }
+            else if (value1!='select')
+            {
+                if (value2=='select')
+                {
+                    document.getElementById("error_message3a").innerHTML = "";
+                    document.getElementById("error_message3b").innerHTML = "<p>" + "select the unit" + "</p>";
+                }
+                else if (value2!='select')
+                {
+                    document.getElementById("error_message3a").innerHTML = "";
+                    document.getElementById("error_message3b").innerHTML = "";
+                }
+            }
+    
+            console.log("error checked");
+    
+    }
+
+function sel3a(){
+
+
+var val = resultType2B.options[resultType2B.selectedIndex].value;
+// var i = 1;
+if(val!='select'){
+    console.log("selected");
+    $("#inputType3B").focus();
+}
+else{
+    console.log("not selected");
+}
+
+}
+
+
+
+    function errorCheck3a(){
+    
+    var inputType3 = document.getElementById('resultType3B');
+    var resultType3 = document.getElementById('inputType3B');
+    
+    value1 = inputType3.value;
+    value2 = resultType3.value;
+    
+    
+        if (value1=='select')
+            {
+                if (value2=='select')
+                {
+                    document.getElementById("error_message33a").innerHTML = "<p>" + "select the unit" + "</p>";
+                    document.getElementById("error_message33b").innerHTML = "";
+                }
+                else if (value2!='select')
+                {
+                    document.getElementById("error_message33a").innerHTML = "<p>" + "select the unit" + "</p>";
+                    document.getElementById("error_message33b").innerHTML = "";
+                }
+            }
+            else if (value1!='select')
+            {
+                if (value2=='select')
+                {
+                    document.getElementById("error_message33a").innerHTML = "";
+                    document.getElementById("error_message33b").innerHTML = "<p>" + "select the unit" + "</p>";
+                }
+                else if (value2!='select')
+                {
+                    document.getElementById("error_message33a").innerHTML = "";
+                    document.getElementById("error_message33b").innerHTML = "";
+                }
+            }
+    
+            console.log("error checked");
+    
+    }
+
+
+
+
+function imperialEnable3() {
+
+console.log(2);
+
+if ($("#imperial3").is(":checked")) {
+$("#inputType3B").removeAttr("disabled");
+$("#resultType3B").removeAttr("disabled");
+// $("#placeholder").focus();
+} else {
+$("#inputType3B").attr("disabled", "disabled");
+$("#resultType3B").attr("disabled", "disabled");
+}
+}
+
+function EnableDisableTextBoxMetric3() {
+    console.log("a");
+var selectedValue = inputType3.options[inputType3.selectedIndex].value;
+var selectedValueImperial = resultType3.options[resultType3.selectedIndex].value;
+console.log(selectedValue);
+console.log(selectedValueImperial);
+if(selectedValue!= "select" && selectedValueImperial!= "select"){
+    $("#placeholder3").removeAttr("disabled");
+    $("#placeholder3").focus(); 
+}
+else{
+$("#placeholder3").attr("disabled", "disabled");
+}
+errorCheck3();
+}
+
+
+function EnableDisableTextBoxImperial3(){
+    console.log("b");
+    var selectedValue = inputType3B.options[inputType3B.selectedIndex].value;
+    var selectedValueImperial = resultType3B.options[resultType3B.selectedIndex].value;
+    console.log(selectedValue);
+    console.log(selectedValueImperial);
+    if(selectedValue!= "select" && selectedValueImperial!= "select")
+    {
+        $("#outputcal3B").removeAttr("disabled");
+        $("#outputcal3B").focus(); 
+    }
+    else
+    {
+        $("#outputcal3B").attr("disabled", "disabled");
+    }
+    errorCheck3a();
+}
+
+
+function metricEnable5() {
+
+console.log(1);
+
+    if ($("#metric5").is(":checked")) 
+    {
+        $("#inputType5").removeAttr("disabled");
+        $("#resultType5").removeAttr("disabled");
+        $("#inputType5").focus();
+    } 
+    else 
+    {
+        $("#inputType5").attr("disabled", "disabled");
+        $("#resultType5").attr("disabled", "disabled");
+    }
+}
+
+function sel5(){
+
+var val = inputType5.options[inputType5.selectedIndex].value;
+// var i = 1;
+if(val!='select'){
+    console.log("selected");
+    $("#resultType5").focus();
+}
+else{
+    console.log("not selected");
+}
+
+}
+
+
+function errorCheck5(){
+    
+    var inputType5 = document.getElementById('inputType5');
+    var resultType5 = document.getElementById('resultType5');
+    
+    value1 = inputType5.value;
+    value2 = resultType5.value;
+    
+    
+        if (value1=='select')
+            {
+                if (value2=='select')
+                {
+                    document.getElementById("error_message5a").innerHTML = "<p>" + "select the unit" + "</p>";
+                    document.getElementById("error_message5b").innerHTML = "";
+                }
+                else if (value2!='select')
+                {
+                    document.getElementById("error_message5a").innerHTML = "<p>" + "select the unit" + "</p>";
+                    document.getElementById("error_message5b").innerHTML = "";
+                }
+            }
+            else if (value1!='select')
+            {
+                if (value2=='select')
+                {
+                    document.getElementById("error_message5a").innerHTML = "";
+                    document.getElementById("error_message5b").innerHTML = "<p>" + "select the unit" + "</p>";
+                }
+                else if (value2!='select')
+                {
+                    document.getElementById("error_message5a").innerHTML = "";
+                    document.getElementById("error_message5b").innerHTML = "";
+                }
+            }
+    
+            console.log("error checked");
+    
+    }
+
+
+    
+function sel5a(){
+
+
+var val = resultType5B.options[resultType5B.selectedIndex].value;
+// var i = 1;
+if(val!='select'){
+    console.log("selected");
+    $("#inputType5B").focus();
+}
+else{
+    console.log("not selected");
+}
+
+}
+
+
+
+    function errorCheck5a(){
+    
+    var inputType5 = document.getElementById('resultType5B');
+    var resultType5 = document.getElementById('inputType5B');
+    
+    value1 = inputType5.value;
+    value2 = resultType5.value;
+    
+    
+        if (value1=='select')
+            {
+                if (value2=='select')
+                {
+                    document.getElementById("error_message55a").innerHTML = "<p>" + "select the unit" + "</p>";
+                    document.getElementById("error_message55b").innerHTML = "";
+                }
+                else if (value2!='select')
+                {
+                    document.getElementById("error_message55a").innerHTML = "<p>" + "select the unit" + "</p>";
+                    document.getElementById("error_message55b").innerHTML = "";
+                }
+            }
+            else if (value1!='select')
+            {
+                if (value2=='select')
+                {
+                    document.getElementById("error_message55a").innerHTML = "";
+                    document.getElementById("error_message55b").innerHTML = "<p>" + "select the unit" + "</p>";
+                }
+                else if (value2!='select')
+                {
+                    document.getElementById("error_message55a").innerHTML = "";
+                    document.getElementById("error_message55b").innerHTML = "";
+                }
+            }
+    
+            console.log("error checked");
+    
+    }
+
+
+
+function imperialEnable5() {
+
+console.log(2);
+
+if ($("#imperial5").is(":checked")) {
+$("#inputType5B").removeAttr("disabled");
+$("#resultType5B").removeAttr("disabled");
+// $("#placeholder").focus();
+} else {
+$("#inputType5B").attr("disabled", "disabled");
+$("#resultType5B").attr("disabled", "disabled");
+}
+}
+
+function EnableDisableTextBoxMetric5() {
+    console.log("y");
+var selectedValue = inputType5.options[inputType5.selectedIndex].value;
+var selectedValueImperial = resultType5.options[resultType5.selectedIndex].value;
+console.log(selectedValue);
+console.log(selectedValueImperial);
+if(selectedValue!= "select" && selectedValueImperial!= "select"){
+    $("#placeholder5").removeAttr("disabled");
+    $("#placeholder5").focus(); 
+}
+else{
+$("#placeholder5").attr("disabled", "disabled");
+}
+errorCheck5();
+}
+
+
+function EnableDisableTextBoxImperial5(){
+    console.log("z");
+    var selectedValue = inputType5B.options[inputType5B.selectedIndex].value;
+    var selectedValueImperial = resultType5B.options[resultType5B.selectedIndex].value;
+    console.log(selectedValue);
+    console.log(selectedValueImperial);
+    if(selectedValue!= "select" && selectedValueImperial!= "select")
+    {
+        $("#outputcal5B").removeAttr("disabled");
+        $("#outputcal5B").focus(); 
+    }
+    else
+    {
+        $("#outputcal5B").attr("disabled", "disabled");
+    }
+    errorCheck5a();
+}
+
+
+function resetOutput(){
+    console.log("output Reset");
+    for (i=1; i<5 ; i++ )
+    {
+        console.log(i);
+        document.getElementById("out"+i).innerHTML = "";
+    }
+}
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

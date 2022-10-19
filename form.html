@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="./assets/img/Logo only.png">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    
+
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/get.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <link rel="stylesheet" href="/assets/css/single.css" />
+    <link rel="stylesheet" href="/assets/css/ty.css" />
+    <link rel="stylesheet" href="/assets/css/form.css" />
+    
+
+
+    <!-- font Awesome -->
+    <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
+    
+
+
+
+
+
+    <title>Get Quote</title>
+    <style>
+        body {
+            background-image: url("/img/src/bluewave.png"), url("/img/white-wave.png");
+            background-size: contain, contain;
+            background-position: top, bottom;
+        }
+        input, select {
+            margin-bottom: 15px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+    </style>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+    <script>
+        $(function() {
+            $("#menu").load("header.html");
+            $("#footer").load("footer.html");
+
+        });
+    </script>
+
+    <!-- <script>
+        function styleselect() {
+  var value = $('#CommodityNature').val();
+
+  if (value == "General Cargo") {
+    $('#dangerous').hide()
+    $('#perishable').hide()
+  }
+  else if (value == "Dangerous Cargo") {
+    $('#dangerous').show()
+    $('#perishable').hide()
+  }
+  else if (value == "Perishable Cargo") {
+    $('#dangerous').hide()
+    $('#perishable').show()
+  }
+  else {
+    $('#perishable').hide()
+    $('#dangerous').hide()
+  }
+}
+    </script> -->
+
+    <script>
+        $(document).ready(function(){
+            var selectEl = document.getElementById('CommodityNature');
+            $(selectEl).change(function(){
+                $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue ==  "General Cargo"){
+                $('#dangerous').hide()
+                $('#perishable').hide()
+            } else if(optionValue ==  "Dangerous Cargo") {
+                $('#dangerous').show()
+                $('#perishable').hide()
+            } else if(optionValue ==  "Perishable Cargo") {
+                $('#dangerous').hide()
+                $('#perishable').show()
+            } else {
+                $('#dangerous').hide()
+                $('#perishable').hide()
+            }
+        });
+    }).change();
+        
+    
+});
+    </script>
+
+
+    <!-- <script>
+        var selectEl = document.getElementById('CommodityNature');
+        var listener = function(e){
+        if(selectEl.value == "General Cargo"){
+            $('#dangerous').hide();
+            $('#perishable').hide();
+        }else if(selectEl.value == "Dangerous Cargo"){
+            $('#dangerous').show();
+            $('#perishable').hide();
+        }else if(selectEl.value == "Perishable Cargo"){
+            $('#dangerous').hide();
+            $('#perishable').show();
+        }
+        }
+        selectEl.addEventListener('change',listener);
+
+    </script> -->
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <div id="menu"></div>
+
+    <!-- Navbar ends -->
+
+    <!-- Google Automatic Sign in -->
+
+
+    <section class="form">
+
+        <div style="width: 66%;" class="container heading">
+            <div class="line"></div>
+            <h1>Request A Free no-obligation Quote for Spot Freight Rates</h1>
+            <div class="line"></div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row justify-content-center" style="flex-direction: row;">
+                <div class="col-11 col-sm-9 col-md-7 col-lg-12 col-xl-9 text-center p-0 mb-2">
+                    <div class="px-0  pb-0 mt-3 mb-3">
+
+                        <form id="msform" name="getquote" method="post" autocomplete="on" >
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li class="active" id="account"><strong>1.Conact Information</strong></li>
+                                <li id="personal"><strong>2.Cargo Information</strong></li>
+                                <li id="payment"><strong>3.Transport Information</strong></li>
+                                <li id="confirm"><strong>Finish</strong></li>
+                            </ul>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div> <br>
+                            <!-- fieldsets -->
+                             <fieldset class="shadow-lg mt-3" style="border-radius: 20px;">
+                                    
+                                <div style="margin-bottom: -34px;" class="form-card">
+                                    <h4 style="margin-top: -20px;" class="fw-bold mb-3">Conact Information</h4>
+
+                                    <div class="row">
+
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>First Name</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Enter Your FirstName"></i>
+                                            <input type="text" class="form-control" name="firstname" placeholder="First Name">
+                                        </div>
+
+
+
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>Surname</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Enter Your Last Name"></i>
+                                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
+                                        </div>
+
+
+
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>E-mail Id</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Enter Your Email Ex.abc@workmail.com free email id will not be replied"></i>
+                                            <input type="email" class="form-control" id="emailid" name="emailid" placeholder="abc@workmail.com">
+                                        </div>
+
+
+
+
+
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>Company Name</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Enter Company Name"></i>
+                                            <input type="text" class="form-control" id="companyname" name="companyname" placeholder="Company Name">
+                                        </div>
+
+
+
+
+
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>Whatsapp *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Enter Your Whatsapp number"></i>
+                                            <input type="tel" class="form-control" id="Whatsapp" name="Whatsapp" placeholder="+888-39849389">
+                                        </div>
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>Mobile *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Enter Your Mobile number"></i>
+                                            <input type="tel" class="form-control" id="Mobile" name="Mobile" placeholder="Mobile Number">
+                                        </div>
+
+
+
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>Customer Type *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="What describes your Business"></i>
+                                            <select class="form-select" id="salutation" name="salution" aria-label="Default select example">
+                                                <option hidden disabled selected>Select</option>
+                                                <option value="1">Exporter-Importer</option>
+                                                <option value="2">Custom Clearing Agent</option>
+                                                <option value="3">Freight Forwarder</option>
+                                              </select>
+                                        </div>
+
+
+
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>Country *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Select Your Country"></i>
+                                            <select class="form-control" id="country" name="country">
+                                                <option disabled value="" selected="selected">Select Country *</option>
+                                        </select>
+                                        </div>
+
+
+
+
+
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>State *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Select Your state"></i>
+                                            <select class="form-control" id="State" name="State">
+                                                <option disabled value="" selected="selected">Please select Country first *</option>
+                                            </select>
+                                        </div>
+
+
+
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>City *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Select Your City"></i>
+                                            <select class="form-control" id="City" name="City">
+                                                <option disabled value="" selected="selected">Please select State first *</option>
+                                               
+                                            </select>
+                                        </div>
+
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>Street</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Enter Street Name"></i>
+                                            <input type="text" class="form-control" id="address" name="address" placeholder="Street Name">
+                                        </div>
+
+
+                                        <div class="form-group col-md-4 col-sm-12 pincode">
+                                            <label class="fieldlabels"><b>ZIP Code *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Enter Your Zipcode"></i>
+                                            <input type="tel" class="form-control" id="Zipcode" name="Zipcode" placeholder="Zipcode"  min="0" oninput="this.value = Math.abs(this.value)">
+                                        </div>
+
+
+
+                                    </div>
+
+
+                                </div>
+    
+
+                                <input style="margin-top: -20px;" type="button" name="next" class="next action-button border border-0" value="Next" />
+
+                            </fieldset> 
+
+                             <fieldset  class="shadow-lg mt-3"  style="border-radius: 20px;">
+
+                                <div style="margin-bottom: -34px;" class="form-card">
+                                    <h4 style="margin-top: -20px;" class="fw-bold mb-3">Cargo Information</h4>
+
+                                    <div class="row">
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>Commodity Nature*</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Select the Commodity Nature"></i>
+                                            <select class="form-select" id="CommodityNature" name="CommodityNature" onchange="styleselect()">
+                                                <option disabled selected="selected">Select the Commodity Nature*</option>
+                                                <option value="General Cargo">General Cargo</option>
+                                                <option value="Dangerous Cargo">Dangerous Cargo</option>
+                                                <option value="Perishable Cargo">Perishable Cargo</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>Commodity *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="The product or material that you are intending to Export or Import."></i>
+                                            <input type="text" class="form-control" id="commodity" name="commodity" placeholder="Commodity*">
+                                        </div>
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>HSN Code *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="The code of your commodity that is classified under Harmonized System of
+                                            Nomenclature code (HSN Code)."></i>
+                                            <input type="text" class="form-control" id="hsncode" name="hsncode" placeholder="188-abc-3432">
+                                        </div>
+
+
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>Commodity State *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Indicates the aggregation state of the commodity."></i>
+                                            <select class="form-select" id="CommodityNature" name="CommodityNature">
+                                                <option disabled selected="selected">Select the Commodity State*</option>
+
+                                                <option value="General Cargo">Solid</option>
+                                                <option value="Dangerous Cargo">Liquid</option>
+                                                <option value="Dangerous Cargo">Gas</option>
+                                            </select>
+                                        </div>
+
+
+
+
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>Estimated Total Weight(in Kilos) *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Total Gross Weight of the commodity that you are intending
+                                            to Export or Import."></i>
+                                            <input type="text" class="form-control" id="Estimated_Total_Weight" name="Estimated_Total_Weight" placeholder="Estimated Total Weight(in Kilos) *">
+                                        </div>
+
+
+
+
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>Estimated Volumes (Cbm) *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Dimensional Volume of the commodity that you are intending to
+                                            Export or Import."></i>
+                                            <input type="text" class="form-control" id="Estimated_Volumes" name="Estimated_Volumes" placeholder="Estimated Volumes (Cbm)*">
+                                        </div>
+
+
+
+
+
+                                        <div class="form-group col-md-4 col-sm-12">
+                                            <label class="fieldlabels"><b>Estimated Date of shipment *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="-The estimated date on which your company will hand off
+                                            the shipment to us."></i>
+                                            <input type="date" class="form-control" id="Estimated_Date_Of_Ship" name="Estimated_Date_Of_Ship" placeholder="Estimated Date of hipment*">
+                                        </div>
+                                        
+
+                                        <div class="row" id="dangerous">
+                                            
+                                                <div class="form-group col-md-5 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-4">
+
+                                                            <label class="fieldlabels" style="margin-top: 28px;"><b>IMO Class</b></label>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label class="fieldlabels"><b>Class</b></label>
+                                                            <select class="form-select" id="IMOClass" name="IMOClass">
+                                                                <!-- <option disabled selected="selected">8</option>
+                
+                                                                <option value="General Cargo">solid</option>
+                                                                <option value="Dangerous Cargo">liquid</option> -->
+
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                                <option value="6">6</option>
+                                                                <option value="7">7</option>
+                                                                <option value="8">8</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <label class="fieldlabels"><b>Sub-Class</b></label>
+                                                            <!-- Button trigger modal -->
+
+    <i class="fa fa-question-circle"  data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <table style="width:100%">
+                <tr>
+                  <th class="px-2 py-4">UN CLASS</th>
+                  <th class="px-2 py-4">SUB - CLASS</th>
+                </tr>
+                <tr>
+                  <td>Class 1</td>
+                  <td> <p>1.1: Explosives with a mass explosion hazard </p> </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td> <p>1.2: Explosives with a severe projection hazard</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> <p >1.3: Explosives with a fire</p></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td > <p>1.4: Minor fire or projection hazard</p></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td> <p>1.5: An insensitive substance with a mass explosion hazard</p></td>
+
+                </tr>
+                <tr>
+                  <td></td>
+                  <td> <p>1.6: Extremely insensitive articles</p></td>
+
+                </tr>
+
+
+                <tr>
+                    <td>Class 2</td>
+                    <td><p>2.1 Flammable Gases</p></td>
+                    
+                </tr>
+
+                <tr>
+                  <td></td>
+                  <td><p>2.2 Non-Flammable,non-toxic gases</p></td>
+                  
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><p>2.3 Toxic (Poisonous) Gases</p></td>
+                  
+                </tr>
+
+
+                <tr>
+                    <td>Class 3</td>
+                    <td>NO SUB - CLASS</td>
+                    
+                </tr>
+
+                <tr>
+                    <td>Class 4</td>
+                    <td> <p>4.1: Flammable solids</p></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td> <p>4.2: Self-reactive substances</p></td>
+                    
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td> <p>4.3: Solid desensitized explosives</p></td>
+                    
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td> <p>4.4: Polymerizing substances and mixtures (stabilized)</p></td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td> <p>4.5: Substances liable to spontaneous combustion</p></td>
+
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td> <p>4.6: Comprises</p></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td> <p>4.7: Substances which, in contact with water, emit flammable gases</p></td>
+                </tr>
+
+
+                <tr>
+                    <td>Class 5</td>
+                    <td> <p>5.1: Oxidizing substances</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> <p>5.2: Organic peroxides</p></td>
+                </tr>
+
+
+
+                <tr>
+                    <td>Class 6</td>
+                    <td> <p>6.1 Toxic Substances</p></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> <p>6.2 Infectious Substances</p></td>
+                    
+                </tr>
+
+
+                <tr>
+                    <td>Class 7</td>
+                    <td>NO SUB - CLASS</td>
+                    
+                </tr>
+
+
+
+                <tr>
+                    <td>Class 8</td>
+                    <td>NO SUB - CLASS</td>
+                </tr>
+
+
+
+                <tr>
+                    <td>Class 9</td>
+                    <td>NO SUB - CLASS</td>
+                </tr>
+                
+              </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+                                                            <select class="form-select" id="IMOSubClass" name="IMOSubClass">
+                                                                <!-- <option disabled selected="selected">3</option>
+                
+                                                                <option value="General Cargo">solid</option>
+                                                                <option value="Dangerous Cargo">liquid</option> -->
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-3 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <label class="fieldlabels"  style="margin-top: 28px;"><b>IMO-UN NO</b></label>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <input type="text" size="10" style="margin-top: 28px;" id="IMO-UN" name="IMO-UN">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-4 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <label class="fieldlabels"  style="margin-top: 28px;"><b>Packing Group</b></label>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <select class="form-select" id="PackingGroup"  style="margin-top: 28px;" name="PackingGroup">
+                                                                <!-- <option disabled selected="selected">2</option> -->
+                
+                                                                <option value="1">Packing Group I</option>
+                                                                <option value="2">Packing Group II</option>
+                                                                <option value="3">Packing Group III</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-5 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <label class="fieldlabels"><b>Commidity State</b></label>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <select class="form-select" id="CommodityState" name="CommodityState">
+                                                                <option disabled selected="selected">liquid</option>
+                
+                                                                <option value="General Cargo">solid</option>
+                                                                <option value="Dangerous Cargo">liquid</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-7 col-sm-12">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <label class="fieldlabels"><b>Flashpoint</b> </label>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <input class="d-inline" type="text" id="FlashpointCelsius" name="FlashpointCelsius" size="10"><p class="d-inline celsius"> <b> °C</b></p>
+                                                            <p class="celsius-text" style="text-align: center;">Celsius</p>
+                                                            
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <input class="d-inline" type="text" id="FlashpointFar" name="FlashpointFar" size="10"><p class="d-inline celsius"> <b> °F</b></p>
+                                                            <p class="celsius-text" style="text-align: center;">Farenheit</p>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            
+                                        </div>
+
+
+                                        <div class="row" id="perishable">
+
+                                            <div class="form-group col-6 d-inline">
+                                                <h5>Is the shipment temperatue sensitive?</h5>
+                                            </div>
+                                            <div class="form-group col-6 d-inline">
+
+                                            Yes <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck"> No <input type="radio" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"><br>
+                                            
+                                            </div>
+
+                                            <div id="ifYes" style="visibility:hidden">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                                        <h5 class="text-center">Minimum temperatue</h5>
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                                        <h5 class="text-center">Maximum temperatue</h5>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-2 col-md-3 col-sm-6">
+                                                        <input type="text" name="minitempCel" class="d-inline">
+                                                        <p class="d-inline"><b>°C</b></p>
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-3 col-sm-6">
+                                                        <input type="text" name="minitempFar" class="d-inline">
+                                                        <p class="d-inline"><b>°F</b></p>
+                                                    </div>
+                                                    <div class="offset-lg-2 col-lg-2 col-md-3 col-sm-6">
+                                                        <input type="text" name="maxtempCel" class="d-inline">
+                                                        <p class="d-inline"><b>°C</b></p>
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-3 col-sm-6">
+                                                        <input type="text" name="maxtempFar" class="d-inline">
+                                                        <p class="d-inline"><b>°F</b></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        
+                                    
+                                        </div>
+
+
+                                    <div class="row">
+                                        <div class="form-group col-md-4 col-sm-12 pincode">
+                                            <label class="fieldlabels"><b>Remarks *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Say about your shipment"></i>
+                                            <input type="text" class="form-control" id="remarks" name="remarks" placeholder="remarks">
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="margin-left: 5px;" class="row">
+                                        <div class=" col-md-4 col-sm-12">
+                                            <div class="row">
+                                                <div class="form-check col-lg-4 col-md-4 col-sm-4">
+                                                    <input class="form-check-input" type="checkbox" name="Fragile" id="flexCheckDefault1">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                          Fragile
+                                                        </label>
+                                                </div>   
+                                                <div class="form-check col-lg-4 col-md-4 col-sm-4">
+                                                    <input class="form-check-input" type="radio"  name="FragileYes" id="flexRadioDefault2">
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                      Yes
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col-lg-4 col-md-4 col-sm-4">
+                                                    <input class="form-check-input" type="radio"  name="FragileNo" id="flexRadioDefault1">
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                      No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-left: 5px;" class="row">
+                                        <div class=" col-md-4 col-sm-12">
+                                            <div class="row">
+                                                <div class="form-check col-lg-4 col-md-4 col-sm-4">
+                                                    <input class="form-check-input" type="checkbox" value="" name="Stackable" id="flexCheckDefault2">
+                                                        <label class="form-check-label" for="flexCheckDefault2">
+                                                          Stackable
+                                                        </label>
+                                                </div>   
+                                                <div class="form-check col-lg-4 col-md-4 col-sm-4">
+                                                    <input class="form-check-input" type="radio" name="StackableYes" id="flexRadioDefault3">
+                                                    <label class="form-check-label" for="flexRadioDefault3">
+                                                      Yes
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col-lg-4 col-md-4 col-sm-4">
+                                                    <input class="form-check-input" type="radio" name="StackableNo" id="flexRadioDefault4">
+                                                    <label class="form-check-label" for="flexRadioDefault4">
+                                                      No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-left: 5px;" class="row">
+                                        <div class=" col-md-4 col-sm-12">
+                                            <div class="row">
+                                                <div class="form-check col-lg-4 col-md-4 col-sm-4">
+                                                    <input class="form-check-input" type="checkbox" value="" name="Turnable" id="flexCheckDefault3">
+                                                        <label class="form-check-label" for="flexCheckDefault3">
+                                                          Turnable
+                                                        </label>
+                                                </div>   
+                                                <div class="form-check col-lg-4 col-md-4 col-sm-4">
+                                                    <input class="form-check-input" type="radio" name="TurnableYes" id="flexRadioDefault5">
+                                                    <label class="form-check-label" for="flexRadioDefault5">
+                                                      Yes
+                                                    </label>
+                                                </div>
+                                                <div class="form-check col-lg-4 col-md-4 col-sm-4">
+                                                    <input class="form-check-input" type="radio" name="TurnableNo" id="flexRadioDefault5">
+                                                    <label class="form-check-label" for="flexRadioDefault5">
+                                                      No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                </div>
+
+
+                                <input style="margin-top: -20px;" type="button" name="back" class="previous action-button-previous border border-0" value="Back" />
+                                <input style="margin-top: -20px;" type="button" name="next" class="next action-button border border-0" value="Next" />
+
+
+                            </fieldset> 
+
+
+
+                             <fieldset  class="shadow-lg mt-3" style="border-radius: 20px;">
+
+
+                                    <div style="margin-bottom: -34px;" class="form-card">
+                                        <h4 style="margin-top: -20px;" class="fw-bold mb-3">Transport Information</h4>
+
+
+                                        <div class="row">
+    
+                                            <div class="form-group col-md-4 col-sm-12">
+                                                <label class="fieldlabels"><b>Shipping Mode</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="The way or means of transportation you wish to use to ship your goods."></i>
+                                                <select class="form-select" id="shippingmode" name="shippingmode" onchange="changeShippingType(this.value)">
+                                                            <option disabled selected value="">Air/Sea *</option>
+                                                            <option value="Air">Air</option>
+                                                            <option value="Sea">Sea</option>
+                                                        </select>
+    
+                                            </div>
+                                            
+                                            <div class="form-group col-md-4 col-sm-12">
+                                                <label class="fieldlabels"><b>Shipping Type </b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Choose your choice of moving your shipment."></i>
+                                                <select class="form-select sea-form" id="shippingtype" name="shippingtype" onchange="setContainerDetails()">
+                                                    <option disabled value="" selected="selected">Select Shipping Type</option>
+                                                    <!-- <option value="FCL">FCL</option>
+                                                    <option value="LCL">LCL</option> -->
+                                        </select> 
+                                            </div>
+                                            
+                                            <div class="form-group col-md-4 col-sm-12">
+                                                            <label class="fieldlabels"><b>Container Type*</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Select the Type of container you wish to use to ship your shipment."></i>
+                                                            <select class="form-select" id="container_type" name="container_type">
+                                            <option disabled selected value="">Container Type* ↓</option>
+                                            <option value="Standard Container">Standard Container</option>
+                                            <option value="Refrigerator Container">Refrigerator Container</option>
+                                            <option value="Open top container">Open Top Container</option>
+                                            <option value="Flat Rack container">Flat Rack Container</option>
+                                            <option value="Tank Container">Tank Container</option>
+                                            <!-- <option value="General purpose container">General purpose container</option> -->
+                                            <!-- <option value="Double Door Containers">Double Door Containers</option>
+                                            <option value="One Side Containers">One Side Containers</option>
+                                            <option value="ISO Reefer Containers">ISO Reefer Containers</option>
+                                            <option value="Insulated Containers">Insulated Containers</option>
+                                            <option value="Tanker container">Tanker container</option>
+                                            <option value="Half Height Containers">Half Height Containers</option>
+                                            <option value="Car Carriers">Car Carriers</option> -->
+
+
+                                            </select>
+    
+                                                        </div>
+    
+                                                        
+    
+                                                    
+    
+                                                        <div class="form-group col-md-4 col-sm-12">
+                                                            <label class="fieldlabels"><b>Container Size*</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Choose the Size of the Container you wish to ship your Shipment."></i>
+                                                            <select class="form-select" id="container_size" name="container_Size">
+                                                                <option disabled value="" selected="selected">Container Size*</option>
+                                                                <option value="20FT">20FT</option>
+                                                                <option value="40FT">40FT</option>
+                                                                <option value="40HC">40HC</option>
+
+                                            </select>
+    
+                                                        </div>
+    
+                                                    
+    
+                                                    
+    
+                                                        <div class="form-group col-md-4 col-sm-12">
+                                                            <label class="fieldlabels"><b>Quantity *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Number of containers you need to ship your shipment."></i>
+                                                            <input type="number" class="form-control" id="Quantity" name="Quantity" placeholder="Quantity*" min="0" oninput="this.value = Math.abs(this.value)">
+
+                                                
+                                            </select>
+    
+                                                        
+                                                        </div>
+    
+                                                        
+    
+                                                        <div class="form-group col-md-4 col-sm-12">
+                                                            <label class="fieldlabels"><b>Country Of Orgin *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="The country from which you are exporting."></i>
+                                                            <select class="form-select" id="country_of_origin" name="country_of_origin">
+                                                                <option disabled value="" selected="selected">Select The Country</option>
+
+                                                                <option value="Afganistan">Afghanistan</option>
+                                                                <option value="Albania">Albania</option>
+                                                                <option value="Algeria">Algeria</option>
+                                                                <option value="American Samoa">American Samoa</option>
+                                                                <option value="Andorra">Andorra</option>
+                                                                <option value="Angola">Angola</option>
+                                                                <option value="Anguilla">Anguilla</option>
+                                                                <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                                                                <option value="Argentina">Argentina</option>
+                                                                <option value="Armenia">Armenia</option>
+                                                                <option value="Aruba">Aruba</option>
+                                                                <option value="Australia">Australia</option>
+                                                                <option value="Austria">Austria</option>
+                                                                <option value="Azerbaijan">Azerbaijan</option>
+                                                                <option value="Bahamas">Bahamas</option>
+                                                                <option value="Bahrain">Bahrain</option>
+                                                                <option value="Bangladesh">Bangladesh</option>
+                                                                <option value="Barbados">Barbados</option>
+                                                                <option value="Belarus">Belarus</option>
+                                                                <option value="Belgium">Belgium</option>
+                                                                <option value="Belize">Belize</option>
+                                                                <option value="Benin">Benin</option>
+                                                                <option value="Bermuda">Bermuda</option>
+                                                                <option value="Bhutan">Bhutan</option>
+                                                                <option value="Bolivia">Bolivia</option>
+                                                                <option value="Bonaire">Bonaire</option>
+                                                                <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+                                                                <option value="Botswana">Botswana</option>
+                                                                <option value="Brazil">Brazil</option>
+                                                                <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+                                                                <option value="Brunei">Brunei</option>
+                                                                <option value="Bulgaria">Bulgaria</option>
+                                                                <option value="Burkina Faso">Burkina Faso</option>
+                                                                <option value="Burundi">Burundi</option>
+                                                                <option value="Cambodia">Cambodia</option>
+                                                                <option value="Cameroon">Cameroon</option>
+                                                                <option value="Canada">Canada</option>
+                                                                <option value="Canary Islands">Canary Islands</option>
+                                                                <option value="Cape Verde">Cape Verde</option>
+                                                                <option value="Cayman Islands">Cayman Islands</option>
+                                                                <option value="Central African Republic">Central African Republic</option>
+                                                                <option value="Chad">Chad</option>
+                                                                <option value="Channel Islands">Channel Islands</option>
+                                                                <option value="Chile">Chile</option>
+                                                                <option value="China">China</option>
+                                                                <option value="Christmas Island">Christmas Island</option>
+                                                                <option value="Cocos Island">Cocos Island</option>
+                                                                <option value="Colombia">Colombia</option>
+                                                                <option value="Comoros">Comoros</option>
+                                                                <option value="Congo">Congo</option>
+                                                                <option value="Cook Islands">Cook Islands</option>
+                                                                <option value="Costa Rica">Costa Rica</option>
+                                                                <option value="Cote DIvoire">Cote DIvoire</option>
+                                                                <option value="Croatia">Croatia</option>
+                                                                <option value="Cuba">Cuba</option>
+                                                                <option value="Curaco">Curacao</option>
+                                                                <option value="Cyprus">Cyprus</option>
+                                                                <option value="Czech Republic">Czech Republic</option>
+                                                                <option value="Denmark">Denmark</option>
+                                                                <option value="Djibouti">Djibouti</option>
+                                                                <option value="Dominica">Dominica</option>
+                                                                <option value="Dominican Republic">Dominican Republic</option>
+                                                                <option value="East Timor">East Timor</option>
+                                                                <option value="Ecuador">Ecuador</option>
+                                                                <option value="Egypt">Egypt</option>
+                                                                <option value="El Salvador">El Salvador</option>
+                                                                <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                                                <option value="Eritrea">Eritrea</option>
+                                                                <option value="Estonia">Estonia</option>
+                                                                <option value="Ethiopia">Ethiopia</option>
+                                                                <option value="Falkland Islands">Falkland Islands</option>
+                                                                <option value="Faroe Islands">Faroe Islands</option>
+                                                                <option value="Fiji">Fiji</option>
+                                                                <option value="Finland">Finland</option>
+                                                                <option value="France">France</option>
+                                                                <option value="French Guiana">French Guiana</option>
+                                                                <option value="French Polynesia">French Polynesia</option>
+                                                                <option value="French Southern Ter">French Southern Ter</option>
+                                                                <option value="Gabon">Gabon</option>
+                                                                <option value="Gambia">Gambia</option>
+                                                                <option value="Georgia">Georgia</option>
+                                                                <option value="Germany">Germany</option>
+                                                                <option value="Ghana">Ghana</option>
+                                                                <option value="Gibraltar">Gibraltar</option>
+                                                                <option value="Great Britain">Great Britain</option>
+                                                                <option value="Greece">Greece</option>
+                                                                <option value="Greenland">Greenland</option>
+                                                                <option value="Grenada">Grenada</option>
+                                                                <option value="Guadeloupe">Guadeloupe</option>
+                                                                <option value="Guam">Guam</option>
+                                                                <option value="Guatemala">Guatemala</option>
+                                                                <option value="Guinea">Guinea</option>
+                                                                <option value="Guyana">Guyana</option>
+                                                                <option value="Haiti">Haiti</option>
+                                                                <option value="Hawaii">Hawaii</option>
+                                                                <option value="Honduras">Honduras</option>
+                                                                <option value="Hong Kong">Hong Kong</option>
+                                                                <option value="Hungary">Hungary</option>
+                                                                <option value="Iceland">Iceland</option>
+                                                                <option value="Indonesia">Indonesia</option>
+                                                                <option value="India">India</option>
+                                                                <option value="Iran">Iran</option>
+                                                                <option value="Iraq">Iraq</option>
+                                                                <option value="Ireland">Ireland</option>
+                                                                <option value="Isle of Man">Isle of Man</option>
+                                                                <option value="Israel">Israel</option>
+                                                                <option value="Italy">Italy</option>
+                                                                <option value="Jamaica">Jamaica</option>
+                                                                <option value="Japan">Japan</option>
+                                                                <option value="Jordan">Jordan</option>
+                                                                <option value="Kazakhstan">Kazakhstan</option>
+                                                                <option value="Kenya">Kenya</option>
+                                                                <option value="Kiribati">Kiribati</option>
+                                                                <option value="Korea North">Korea North</option>
+                                                                <option value="Korea Sout">Korea South</option>
+                                                                <option value="Kuwait">Kuwait</option>
+                                                                <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                                                <option value="Laos">Laos</option>
+                                                                <option value="Latvia">Latvia</option>
+                                                                <option value="Lebanon">Lebanon</option>
+                                                                <option value="Lesotho">Lesotho</option>
+                                                                <option value="Liberia">Liberia</option>
+                                                                <option value="Libya">Libya</option>
+                                                                <option value="Liechtenstein">Liechtenstein</option>
+                                                                <option value="Lithuania">Lithuania</option>
+                                                                <option value="Luxembourg">Luxembourg</option>
+                                                                <option value="Macau">Macau</option>
+                                                                <option value="Macedonia">Macedonia</option>
+                                                                <option value="Madagascar">Madagascar</option>
+                                                                <option value="Malaysia">Malaysia</option>
+                                                                <option value="Malawi">Malawi</option>
+                                                                <option value="Maldives">Maldives</option>
+                                                                <option value="Mali">Mali</option>
+                                                                <option value="Malta">Malta</option>
+                                                                <option value="Marshall Islands">Marshall Islands</option>
+                                                                <option value="Martinique">Martinique</option>
+                                                                <option value="Mauritania">Mauritania</option>
+                                                                <option value="Mauritius">Mauritius</option>
+                                                                <option value="Mayotte">Mayotte</option>
+                                                                <option value="Mexico">Mexico</option>
+                                                                <option value="Midway Islands">Midway Islands</option>
+                                                                <option value="Moldova">Moldova</option>
+                                                                <option value="Monaco">Monaco</option>
+                                                                <option value="Mongolia">Mongolia</option>
+                                                                <option value="Montserrat">Montserrat</option>
+                                                                <option value="Morocco">Morocco</option>
+                                                                <option value="Mozambique">Mozambique</option>
+                                                                <option value="Myanmar">Myanmar</option>
+                                                                <option value="Nambia">Nambia</option>
+                                                                <option value="Nauru">Nauru</option>
+                                                                <option value="Nepal">Nepal</option>
+                                                                <option value="Netherland Antilles">Netherland Antilles</option>
+                                                                <option value="Netherlands">Netherlands (Holland, Europe)</option>
+                                                                <option value="Nevis">Nevis</option>
+                                                                <option value="New Caledonia">New Caledonia</option>
+                                                                <option value="New Zealand">New Zealand</option>
+                                                                <option value="Nicaragua">Nicaragua</option>
+                                                                <option value="Niger">Niger</option>
+                                                                <option value="Nigeria">Nigeria</option>
+                                                                <option value="Niue">Niue</option>
+                                                                <option value="Norfolk Island">Norfolk Island</option>
+                                                                <option value="Norway">Norway</option>
+                                                                <option value="Oman">Oman</option>
+                                                                <option value="Pakistan">Pakistan</option>
+                                                                <option value="Palau Island">Palau Island</option>
+                                                                <option value="Palestine">Palestine</option>
+                                                                <option value="Panama">Panama</option>
+                                                                <option value="Papua New Guinea">Papua New Guinea</option>
+                                                                <option value="Paraguay">Paraguay</option>
+                                                                <option value="Peru">Peru</option>
+                                                                <option value="Phillipines">Philippines</option>
+                                                                <option value="Pitcairn Island">Pitcairn Island</option>
+                                                                <option value="Poland">Poland</option>
+                                                                <option value="Portugal">Portugal</option>
+                                                                <option value="Puerto Rico">Puerto Rico</option>
+                                                                <option value="Qatar">Qatar</option>
+                                                                <option value="Republic of Montenegro">Republic of Montenegro</option>
+                                                                <option value="Republic of Serbia">Republic of Serbia</option>
+                                                                <option value="Reunion">Reunion</option>
+                                                                <option value="Romania">Romania</option>
+                                                                <option value="Russia">Russia</option>
+                                                                <option value="Rwanda">Rwanda</option>
+                                                                <option value="St Barthelemy">St Barthelemy</option>
+                                                                <option value="St Eustatius">St Eustatius</option>
+                                                                <option value="St Helena">St Helena</option>
+                                                                <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                                                                <option value="St Lucia">St Lucia</option>
+                                                                <option value="St Maarten">St Maarten</option>
+                                                                <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
+                                                                <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
+                                                                <option value="Saipan">Saipan</option>
+                                                                <option value="Samoa">Samoa</option>
+                                                                <option value="Samoa American">Samoa American</option>
+                                                                <option value="San Marino">San Marino</option>
+                                                                <option value="Sao Tome & Principe">Sao Tome & Principe</option>
+                                                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                                                <option value="Senegal">Senegal</option>
+                                                                <option value="Seychelles">Seychelles</option>
+                                                                <option value="Sierra Leone">Sierra Leone</option>
+                                                                <option value="Singapore">Singapore</option>
+                                                                <option value="Slovakia">Slovakia</option>
+                                                                <option value="Slovenia">Slovenia</option>
+                                                                <option value="Solomon Islands">Solomon Islands</option>
+                                                                <option value="Somalia">Somalia</option>
+                                                                <option value="South Africa">South Africa</option>
+                                                                <option value="Spain">Spain</option>
+                                                                <option value="Sri Lanka">Sri Lanka</option>
+                                                                <option value="Sudan">Sudan</option>
+                                                                <option value="Suriname">Suriname</option>
+                                                                <option value="Swaziland">Swaziland</option>
+                                                                <option value="Sweden">Sweden</option>
+                                                                <option value="Switzerland">Switzerland</option>
+                                                                <option value="Syria">Syria</option>
+                                                                <option value="Tahiti">Tahiti</option>
+                                                                <option value="Taiwan">Taiwan</option>
+                                                                <option value="Tajikistan">Tajikistan</option>
+                                                                <option value="Tanzania">Tanzania</option>
+                                                                <option value="Thailand">Thailand</option>
+                                                                <option value="Togo">Togo</option>
+                                                                <option value="Tokelau">Tokelau</option>
+                                                                <option value="Tonga">Tonga</option>
+                                                                <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                                                                <option value="Tunisia">Tunisia</option>
+                                                                <option value="Turkey">Turkey</option>
+                                                                <option value="Turkmenistan">Turkmenistan</option>
+                                                                <option value="Turks & Caicos Is">Turks & Caicos Is</option>
+                                                                <option value="Tuvalu">Tuvalu</option>
+                                                                <option value="Uganda">Uganda</option>
+                                                                <option value="United Kingdom">United Kingdom</option>
+                                                                <option value="Ukraine">Ukraine</option>
+                                                                <option value="United Arab Erimates">United Arab Emirates</option>
+                                                                <option value="United States of America">United States of America</option>
+                                                                <option value="Uraguay">Uruguay</option>
+                                                                <option value="Uzbekistan">Uzbekistan</option>
+                                                                <option value="Vanuatu">Vanuatu</option>
+                                                                <option value="Vatican City State">Vatican City State</option>
+                                                                <option value="Venezuela">Venezuela</option>
+                                                                <option value="Vietnam">Vietnam</option>
+                                                                <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+                                                                <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+                                                                <option value="Wake Island">Wake Island</option>
+                                                                <option value="Wallis & Futana Is">Wallis & Futana Is</option>
+                                                                <option value="Yemen">Yemen</option>
+                                                                <option value="Zaire">Zaire</option>
+                                                                <option value="Zambia">Zambia</option>
+                                                                <option value="Zimbabwe">Zimbabwe</option>
+                                                             </select>
+                                                        </div>
+    
+                                                        
+    
+                                                        
+    
+                                                        <div class="form-group col-md-4 col-sm-12">
+                                                            <label class="fieldlabels"><b>Place of Receipt *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="The location where the cargo is received by the carrier from the shipper."></i>
+                                                            <input type="text" class="form-control" id="place_of_receipt" name="place_of_receipt" placeholder=" Place Of Receipt">
+                                                        </div>
+                                                        
+    
+                                                        
+                                                        <div class="form-group col-md-4 col-sm-12">
+                                                            <label class="fieldlabels"><b>Port of Loading*</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="A port where goods are loaded aboard a ship and ready to be transported."></i>
+                                                            <input type="text" class="form-control" id="port_of_loading" name="port_of_loading" placeholder="Port of Loading*">
+                                                        </div>
+                                                    
+    
+    
+                                                        <div class="form-group col-md-4 col-sm-12">
+                                                            <label class="fieldlabels"><b>Country of Destination *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="The country to which goods are transported"></i>
+                                                            <select class="form-select" id="country_of_destination" name="country_of_destination">
+                                                                <option disabled value="" selected="selected">Select The Country</option>
+
+                                                                <option value="Afganistan">Afghanistan</option>
+                                                                <option value="Albania">Albania</option>
+                                                                <option value="Algeria">Algeria</option>
+                                                                <option value="American Samoa">American Samoa</option>
+                                                                <option value="Andorra">Andorra</option>
+                                                                <option value="Angola">Angola</option>
+                                                                <option value="Anguilla">Anguilla</option>
+                                                                <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                                                                <option value="Argentina">Argentina</option>
+                                                                <option value="Armenia">Armenia</option>
+                                                                <option value="Aruba">Aruba</option>
+                                                                <option value="Australia">Australia</option>
+                                                                <option value="Austria">Austria</option>
+                                                                <option value="Azerbaijan">Azerbaijan</option>
+                                                                <option value="Bahamas">Bahamas</option>
+                                                                <option value="Bahrain">Bahrain</option>
+                                                                <option value="Bangladesh">Bangladesh</option>
+                                                                <option value="Barbados">Barbados</option>
+                                                                <option value="Belarus">Belarus</option>
+                                                                <option value="Belgium">Belgium</option>
+                                                                <option value="Belize">Belize</option>
+                                                                <option value="Benin">Benin</option>
+                                                                <option value="Bermuda">Bermuda</option>
+                                                                <option value="Bhutan">Bhutan</option>
+                                                                <option value="Bolivia">Bolivia</option>
+                                                                <option value="Bonaire">Bonaire</option>
+                                                                <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
+                                                                <option value="Botswana">Botswana</option>
+                                                                <option value="Brazil">Brazil</option>
+                                                                <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
+                                                                <option value="Brunei">Brunei</option>
+                                                                <option value="Bulgaria">Bulgaria</option>
+                                                                <option value="Burkina Faso">Burkina Faso</option>
+                                                                <option value="Burundi">Burundi</option>
+                                                                <option value="Cambodia">Cambodia</option>
+                                                                <option value="Cameroon">Cameroon</option>
+                                                                <option value="Canada">Canada</option>
+                                                                <option value="Canary Islands">Canary Islands</option>
+                                                                <option value="Cape Verde">Cape Verde</option>
+                                                                <option value="Cayman Islands">Cayman Islands</option>
+                                                                <option value="Central African Republic">Central African Republic</option>
+                                                                <option value="Chad">Chad</option>
+                                                                <option value="Channel Islands">Channel Islands</option>
+                                                                <option value="Chile">Chile</option>
+                                                                <option value="China">China</option>
+                                                                <option value="Christmas Island">Christmas Island</option>
+                                                                <option value="Cocos Island">Cocos Island</option>
+                                                                <option value="Colombia">Colombia</option>
+                                                                <option value="Comoros">Comoros</option>
+                                                                <option value="Congo">Congo</option>
+                                                                <option value="Cook Islands">Cook Islands</option>
+                                                                <option value="Costa Rica">Costa Rica</option>
+                                                                <option value="Cote DIvoire">Cote DIvoire</option>
+                                                                <option value="Croatia">Croatia</option>
+                                                                <option value="Cuba">Cuba</option>
+                                                                <option value="Curaco">Curacao</option>
+                                                                <option value="Cyprus">Cyprus</option>
+                                                                <option value="Czech Republic">Czech Republic</option>
+                                                                <option value="Denmark">Denmark</option>
+                                                                <option value="Djibouti">Djibouti</option>
+                                                                <option value="Dominica">Dominica</option>
+                                                                <option value="Dominican Republic">Dominican Republic</option>
+                                                                <option value="East Timor">East Timor</option>
+                                                                <option value="Ecuador">Ecuador</option>
+                                                                <option value="Egypt">Egypt</option>
+                                                                <option value="El Salvador">El Salvador</option>
+                                                                <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                                                <option value="Eritrea">Eritrea</option>
+                                                                <option value="Estonia">Estonia</option>
+                                                                <option value="Ethiopia">Ethiopia</option>
+                                                                <option value="Falkland Islands">Falkland Islands</option>
+                                                                <option value="Faroe Islands">Faroe Islands</option>
+                                                                <option value="Fiji">Fiji</option>
+                                                                <option value="Finland">Finland</option>
+                                                                <option value="France">France</option>
+                                                                <option value="French Guiana">French Guiana</option>
+                                                                <option value="French Polynesia">French Polynesia</option>
+                                                                <option value="French Southern Ter">French Southern Ter</option>
+                                                                <option value="Gabon">Gabon</option>
+                                                                <option value="Gambia">Gambia</option>
+                                                                <option value="Georgia">Georgia</option>
+                                                                <option value="Germany">Germany</option>
+                                                                <option value="Ghana">Ghana</option>
+                                                                <option value="Gibraltar">Gibraltar</option>
+                                                                <option value="Great Britain">Great Britain</option>
+                                                                <option value="Greece">Greece</option>
+                                                                <option value="Greenland">Greenland</option>
+                                                                <option value="Grenada">Grenada</option>
+                                                                <option value="Guadeloupe">Guadeloupe</option>
+                                                                <option value="Guam">Guam</option>
+                                                                <option value="Guatemala">Guatemala</option>
+                                                                <option value="Guinea">Guinea</option>
+                                                                <option value="Guyana">Guyana</option>
+                                                                <option value="Haiti">Haiti</option>
+                                                                <option value="Hawaii">Hawaii</option>
+                                                                <option value="Honduras">Honduras</option>
+                                                                <option value="Hong Kong">Hong Kong</option>
+                                                                <option value="Hungary">Hungary</option>
+                                                                <option value="Iceland">Iceland</option>
+                                                                <option value="Indonesia">Indonesia</option>
+                                                                <option value="India">India</option>
+                                                                <option value="Iran">Iran</option>
+                                                                <option value="Iraq">Iraq</option>
+                                                                <option value="Ireland">Ireland</option>
+                                                                <option value="Isle of Man">Isle of Man</option>
+                                                                <option value="Israel">Israel</option>
+                                                                <option value="Italy">Italy</option>
+                                                                <option value="Jamaica">Jamaica</option>
+                                                                <option value="Japan">Japan</option>
+                                                                <option value="Jordan">Jordan</option>
+                                                                <option value="Kazakhstan">Kazakhstan</option>
+                                                                <option value="Kenya">Kenya</option>
+                                                                <option value="Kiribati">Kiribati</option>
+                                                                <option value="Korea North">Korea North</option>
+                                                                <option value="Korea Sout">Korea South</option>
+                                                                <option value="Kuwait">Kuwait</option>
+                                                                <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                                                <option value="Laos">Laos</option>
+                                                                <option value="Latvia">Latvia</option>
+                                                                <option value="Lebanon">Lebanon</option>
+                                                                <option value="Lesotho">Lesotho</option>
+                                                                <option value="Liberia">Liberia</option>
+                                                                <option value="Libya">Libya</option>
+                                                                <option value="Liechtenstein">Liechtenstein</option>
+                                                                <option value="Lithuania">Lithuania</option>
+                                                                <option value="Luxembourg">Luxembourg</option>
+                                                                <option value="Macau">Macau</option>
+                                                                <option value="Macedonia">Macedonia</option>
+                                                                <option value="Madagascar">Madagascar</option>
+                                                                <option value="Malaysia">Malaysia</option>
+                                                                <option value="Malawi">Malawi</option>
+                                                                <option value="Maldives">Maldives</option>
+                                                                <option value="Mali">Mali</option>
+                                                                <option value="Malta">Malta</option>
+                                                                <option value="Marshall Islands">Marshall Islands</option>
+                                                                <option value="Martinique">Martinique</option>
+                                                                <option value="Mauritania">Mauritania</option>
+                                                                <option value="Mauritius">Mauritius</option>
+                                                                <option value="Mayotte">Mayotte</option>
+                                                                <option value="Mexico">Mexico</option>
+                                                                <option value="Midway Islands">Midway Islands</option>
+                                                                <option value="Moldova">Moldova</option>
+                                                                <option value="Monaco">Monaco</option>
+                                                                <option value="Mongolia">Mongolia</option>
+                                                                <option value="Montserrat">Montserrat</option>
+                                                                <option value="Morocco">Morocco</option>
+                                                                <option value="Mozambique">Mozambique</option>
+                                                                <option value="Myanmar">Myanmar</option>
+                                                                <option value="Nambia">Nambia</option>
+                                                                <option value="Nauru">Nauru</option>
+                                                                <option value="Nepal">Nepal</option>
+                                                                <option value="Netherland Antilles">Netherland Antilles</option>
+                                                                <option value="Netherlands">Netherlands (Holland, Europe)</option>
+                                                                <option value="Nevis">Nevis</option>
+                                                                <option value="New Caledonia">New Caledonia</option>
+                                                                <option value="New Zealand">New Zealand</option>
+                                                                <option value="Nicaragua">Nicaragua</option>
+                                                                <option value="Niger">Niger</option>
+                                                                <option value="Nigeria">Nigeria</option>
+                                                                <option value="Niue">Niue</option>
+                                                                <option value="Norfolk Island">Norfolk Island</option>
+                                                                <option value="Norway">Norway</option>
+                                                                <option value="Oman">Oman</option>
+                                                                <option value="Pakistan">Pakistan</option>
+                                                                <option value="Palau Island">Palau Island</option>
+                                                                <option value="Palestine">Palestine</option>
+                                                                <option value="Panama">Panama</option>
+                                                                <option value="Papua New Guinea">Papua New Guinea</option>
+                                                                <option value="Paraguay">Paraguay</option>
+                                                                <option value="Peru">Peru</option>
+                                                                <option value="Phillipines">Philippines</option>
+                                                                <option value="Pitcairn Island">Pitcairn Island</option>
+                                                                <option value="Poland">Poland</option>
+                                                                <option value="Portugal">Portugal</option>
+                                                                <option value="Puerto Rico">Puerto Rico</option>
+                                                                <option value="Qatar">Qatar</option>
+                                                                <option value="Republic of Montenegro">Republic of Montenegro</option>
+                                                                <option value="Republic of Serbia">Republic of Serbia</option>
+                                                                <option value="Reunion">Reunion</option>
+                                                                <option value="Romania">Romania</option>
+                                                                <option value="Russia">Russia</option>
+                                                                <option value="Rwanda">Rwanda</option>
+                                                                <option value="St Barthelemy">St Barthelemy</option>
+                                                                <option value="St Eustatius">St Eustatius</option>
+                                                                <option value="St Helena">St Helena</option>
+                                                                <option value="St Kitts-Nevis">St Kitts-Nevis</option>
+                                                                <option value="St Lucia">St Lucia</option>
+                                                                <option value="St Maarten">St Maarten</option>
+                                                                <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
+                                                                <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
+                                                                <option value="Saipan">Saipan</option>
+                                                                <option value="Samoa">Samoa</option>
+                                                                <option value="Samoa American">Samoa American</option>
+                                                                <option value="San Marino">San Marino</option>
+                                                                <option value="Sao Tome & Principe">Sao Tome & Principe</option>
+                                                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                                                <option value="Senegal">Senegal</option>
+                                                                <option value="Seychelles">Seychelles</option>
+                                                                <option value="Sierra Leone">Sierra Leone</option>
+                                                                <option value="Singapore">Singapore</option>
+                                                                <option value="Slovakia">Slovakia</option>
+                                                                <option value="Slovenia">Slovenia</option>
+                                                                <option value="Solomon Islands">Solomon Islands</option>
+                                                                <option value="Somalia">Somalia</option>
+                                                                <option value="South Africa">South Africa</option>
+                                                                <option value="Spain">Spain</option>
+                                                                <option value="Sri Lanka">Sri Lanka</option>
+                                                                <option value="Sudan">Sudan</option>
+                                                                <option value="Suriname">Suriname</option>
+                                                                <option value="Swaziland">Swaziland</option>
+                                                                <option value="Sweden">Sweden</option>
+                                                                <option value="Switzerland">Switzerland</option>
+                                                                <option value="Syria">Syria</option>
+                                                                <option value="Tahiti">Tahiti</option>
+                                                                <option value="Taiwan">Taiwan</option>
+                                                                <option value="Tajikistan">Tajikistan</option>
+                                                                <option value="Tanzania">Tanzania</option>
+                                                                <option value="Thailand">Thailand</option>
+                                                                <option value="Togo">Togo</option>
+                                                                <option value="Tokelau">Tokelau</option>
+                                                                <option value="Tonga">Tonga</option>
+                                                                <option value="Trinidad & Tobago">Trinidad & Tobago</option>
+                                                                <option value="Tunisia">Tunisia</option>
+                                                                <option value="Turkey">Turkey</option>
+                                                                <option value="Turkmenistan">Turkmenistan</option>
+                                                                <option value="Turks & Caicos Is">Turks & Caicos Is</option>
+                                                                <option value="Tuvalu">Tuvalu</option>
+                                                                <option value="Uganda">Uganda</option>
+                                                                <option value="United Kingdom">United Kingdom</option>
+                                                                <option value="Ukraine">Ukraine</option>
+                                                                <option value="United Arab Erimates">United Arab Emirates</option>
+                                                                <option value="United States of America">United States of America</option>
+                                                                <option value="Uraguay">Uruguay</option>
+                                                                <option value="Uzbekistan">Uzbekistan</option>
+                                                                <option value="Vanuatu">Vanuatu</option>
+                                                                <option value="Vatican City State">Vatican City State</option>
+                                                                <option value="Venezuela">Venezuela</option>
+                                                                <option value="Vietnam">Vietnam</option>
+                                                                <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
+                                                                <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
+                                                                <option value="Wake Island">Wake Island</option>
+                                                                <option value="Wallis & Futana Is">Wallis & Futana Is</option>
+                                                                <option value="Yemen">Yemen</option>
+                                                                <option value="Zaire">Zaire</option>
+                                                                <option value="Zambia">Zambia</option>
+                                                                <option value="Zimbabwe">Zimbabwe</option>
+                                                             </select>
+                                                    
+                                                    </div>
+    
+    
+                                                        
+    
+                                                        <div class="form-group col-md-4 col-sm-12">
+                                                            <label class="fieldlabels"><b>Port Of Discharge *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="A port where a ship discharges part or all of its cargo."></i>
+                                                            <input type="text" class="form-control" id="port_of_discharge" name="port_of_discharge" placeholder="Port Of Discharge*">
+                                                        </div>
+    
+    
+                                                        <div class="form-group col-md-4 col-sm-12">
+                                                            <label class="fieldlabels"><b>Place of Delivery *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="The place of delivery also known as Place of Destination refers to the
+                                                            agreed location to which a shipment is expected to arrive."></i>
+                                                            <input type="text" class="form-control" id="place_of_delivery" name="place_of_delivery" placeholder="Place of Delivery*">
+                                                    
+                                                    </div>
+                                                    
+    
+    
+                                                        <div class=" form-group col-md-4 col-sm-12">
+                                                            <label class="fieldlabels"><b>Freight Terms*</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="A “freight term” identifies how transportation costs are calculated and to whom
+                                                            the freight will be charged under the contract."></i>
+                                                            <select class="form-select" id="freignt" name="freight">
+                                                <option disabled selected="selected" value="">Freignt Terms (Incoterm)* ↓</option>
+                                                <option value="EXW (Ex-works)" title="This means that the seller makes the goods available at a specified location, usually the seller’s factory. The buyer is responsible for onward transportation of the goods and bears the cost for the same">EXW (Ex-works)</option>
+                                                <option value="DAP (Delivered At Place)" title="The seller is responsible for delivering the goods to a designated place">DAP (Delivered At Place)</option>
+                                                <option value="FOB (Free on Board)" title="The seller completes delivery when he loads the goods on a ship specified by the buyer at a named port. Hence, the seller is “free” of responsibility once the goods are “on board” the ship. Any liability for damage or loss thereafter passes to the buyer. This rule applies to goods transported by sea or inland waterway.">FOB (Free on Board)</option>
+                                                <option value="FCA (Free Carrier)" title="The seller delivers the goods to a carrier or an agent nominated by the buyer at the seller’s premises or another specified location.">FCA (Free Carrier)</option>
+                                                <option value="FAS (Free Alongside Ship)" title="The seller delivers the goods alongside the ship (on a barge or quay, for example). The buyer must load the goods on the ship. This rule applies only to sea transport.">FAS (Free Alongside Ship)</option>
+                                                <option value="CFR (Cost and Freight)" title="The seller delivers the goods on a ship at the designated port and pays for cost and freight to bring the goods to the port.">CFR (Cost and Freight)</option>
+                                                <option value="CIF (Cost, Insurance and Freight)" title="The seller delivers the goods on the ship at the named port and pays for cost, freight and insurance to transport the goods to the port">CIF (Cost, Insurance and Freight)</option>
+                                                <option value="CPT (Carriage Paid To)" title="The seller delivers the goods to a named place and pays for carriage to that place.">CPT (Carriage Paid To)</option>
+                                                <option value="CIP (Carriage and Insurance Paid To)" title="The seller delivers the goods to a named place, pays for both carriage and insurance of the goods to that place.">CIP (Carriage and Insurance Paid To)</option>
+                                                <option value="DPU (Delivered At Place Unloaded)" title="The seller delivers the goods at a designated place and unloads them, bearing the risks and costs of both. This is the only rule that requires the seller to unload the goods to complete delivery. The buyer takes care of any import clearance charges, taxes and duties">DPU (Delivered At Place Unloaded)</option>
+                                                <option value="DDP (Delivered Duty Paid)" title="The seller bears the maximum responsibility here as he arranges for carriage and delivery of goods at a named place, and pays for import clearance as well as any duties and taxes that might apply">DDP (Delivered Duty Paid)</option>
+
+
+
+    
+                                            </select>
+    
+                                                        </div>
+
+
+                                                        <div class="form-group offset-md-4 col-md-4 col-sm-12">
+                                                            <label class="fieldlabels"><b>Service Type *</b></label> <i class="fa fa-question-circle" data-toggle="tooltip" title="Name of the service based on the lead time.You can choose from:
+                                                            Express - 1-2 days for urgent cargo
+                                                            Standard - 3-5 days, flexible choice
+                                                            Economy - 5-7 days, maximizing cost effectiveness"></i>
+                                                            <select class="form-select" name="serviceType" id="serviceType">
+                                                                <option disabled value="" selected="selected">Service Type</option>
+
+                                                                <option value="Express">Express</option>
+                                                                <option value="Standard">Standard</option>
+                                                                <option value="Economy">Economy</option>
+                                              
+                                                        </div>
+
+
+                                                        <div class="form-groupcol-md-4 col-sm-12">
+
+
+                                                            <input class="form-control" id="times" name="time" type="hidden">
+                                                        </div>
+
+
+
+
+    
+    
+                                                    </div>
+    
+    
+    
+    
+                                                </div>
+
+                                <input style="margin-top: -20px;" type="button" name="back" class="previous action-button-previous border border-0" value="Back" />
+
+                                <input style="margin-top: -20px;" type="submit" name="submit" class="next action-button border border-0" value="Submit" /> 
+
+
+                            </fieldset> 
+
+
+                            <fieldset  class="shadow-lg mt-3" style="border-radius: 20px;">
+                                <div class="form-card">
+                                  <div class="row">
+                                    <div class="col-12 text-center">
+                                      <h2 class="fs-title">Form is Successfully Submitted</h2>
+                                    </div>
+                                    
+                                  </div> <br><br>
+                                  <h2 class="purple-text text-center"><strong>Form Submitted!</strong></h2> <br>
+                                  <div class="row justify-content-center">
+                                    <div class="col-12 text-center  check"> <i class="fas fa-check-double"></i> </div>
+                                  </div> <br><br>
+                                  
+                                </div>
+                              </fieldset>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <div id="footer"></div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-steps/1.1.0/jquery.steps.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        document.getElementById("times").value = new Date().toLocaleString();
+
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+        
+
+
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+
+    </script>
+    <!-- Type writer effect -->
+
+
+
+    <script src="./assets/js/index.js"></script>
+    <script src="./assets/js/form.js"></script>
+
+    <script src="./assets/js/district.js"></script>
+
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzGyXlaecIRCCHTqJYHjQlALwpUMzTsXBAR4u-_YlNfqiLX_deMGPZ17RRWrMnoDrDMNw/exec'
+        const form = document.forms['getquote']
+    
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => 
+    
+    document.getElementById("resets").reset(),
+     console.log("Submitted"))
+          .catch(error => console.error('Error!', error.message))
+        })
+
+    
+      </script>
+
+    <script>
+        
+        function yesnoCheck() {
+    if (document.getElementById('yesCheck').checked) {
+        document.getElementById('ifYes').style.visibility = 'visible';
+    }
+    else document.getElementById('ifYes').style.visibility = 'hidden';
+
+}
+    </script>
+
+    <script>
+        function changeShippingType(value){
+            let html=`<option disabled value="" selected="selected">Select Shipping Type</option>`; 
+            if (value=="Sea")
+            {
+                html +=`<option value="FCL">FCL</option>
+                      <option value="LCL">LCL</option>`;
+            }
+            else if (value=="Air")
+            {                
+                html +=`<option value="Express">Express</option>
+                <option value="Standard">Standard</option>
+                <option value="Economy">Economy</option>`;
+            }
+            $("#shippingtype").html(html);
+            setContainerDetails();
+        }
+
+        function setContainerDetails(){
+            let shippingMode = $("#shippingmode option:selected").val();
+            let shippingType = $("#shippingtype option:selected").val();
+
+            if (shippingMode == "Air"){
+                $("#serviceType").val("").attr("disabled",false);
+                $("#shippingtype").val("").attr("disabled",true);
+            }
+            else{
+                $("#serviceType").val("").attr("disabled",true);
+                $("#shippingtype").val("").attr("disabled",false);
+            }
+
+            if (shippingMode == "Sea" && shippingType == "FCL"){
+                $("#container_type").val("").attr("disabled",false);
+                $("#container_size").val("").attr("disabled",false);
+                $("#Quantity").val("").attr("readonly",false);
+            }
+            else{
+                $("#container_type").val("").attr("disabled",true);
+                $("#container_size").val("").attr("disabled",true);
+                $("#Quantity").val("").attr("readonly",true);
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

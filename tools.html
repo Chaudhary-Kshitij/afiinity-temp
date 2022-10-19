@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./assets/img/Logo only.png">
+
+    <title>tools</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/toolStyles.css">
+     <!-- Google fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="stylesheet"href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+     <script src="https://kit.fontawesome.com/efd71d3ed7.js" crossorigin="anonymous"></script>
+     
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     
+     <script>
+        $(function() {
+            $("#menu").load("header.html");
+            $("#footer").load("footer.html");    
+        });
+    </script>
+    
+    <!-- <link rel="stylesheet" href="/assets/css/style.css"/> -->
+    <link rel="stylesheet" href="/assets/css/get.css"/>
+    <link rel="stylesheet" href="/assets/css/ty.css"/>
+
+</head>
+<body>
+
+    <!-- Navbar -->
+
+    <div id="menu"></div>
+   
+
+    <div class="row">
+
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <img src="assets/img/Ellipse 8.png">
+                </div>
+                    
+                <div class="col my-auto">
+                    <img src="assets/img/Ellipse 11.png">
+                </div>
+            </div>
+        <div class="col">
+
+        </div>
+        </div>
+
+    <div class="col">
+        
+    </div>
+
+
+    <div class="row p-5">
+        <div class="col">
+
+            <div class="container m-5">
+                <h1 class="d-flex justify-content-left py-3"><b>Convertor Tool</b></h1>
+        
+                <p class="text-muted d-flex justify-content-center pb-3">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc massa lacus, cras condimentum pellentesque dolor commodo. Augue proin neque fusce a.
+                </p>
+                <div class="py-3">
+                <h4><b>Unit Convertor</b></h4>
+                <h4><b>Volumetric Convertor</b></h4>
+                <h4><b>DD and Port Charges calculator</b></h4>
+            </div>
+            </div>
+        </div>
+
+        <div class="col d-flex float-right calculator">
+            <img src="assets/img/Calculator-pana 1.png">
+        </div>
+        
+    </div>    
+    </div>
+
+
+
+<div class="container pb-5">
+    <div class="card" id="card">
+        <div class="card-body p-5">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="tool">
+                  <a class="nav-link active" id="tab-1" data-bs-toggle="tab" href="#tab1" role="tab" aria-controls="home" aria-selected="true">Unit Convertor</a>
+                </li>
+                <li class="tool">
+                  <a class="nav-link" id="tab-2" data-bs-toggle="tab" href="#tab2" role="tab" aria-controls="profile" aria-selected="false">Volumetric Convertor</a>
+                </li>
+                <li class="tool">
+                  <a class="nav-link" id="tab-3" data-bs-toggle="tab" href="#tab3" role="tab" aria-controls="contact" aria-selected="false">DD & Port Charges Calculator</a>
+                </li>
+              </ul>
+
+
+              <div class="tab-content" id="myTabContent">
+
+                   <div class="tab-pane active px-1" id="tab1">
+
+                       <div class="row">
+                           <div class="col-sm-12 col-md-12 col-lg-6 p-5 text-left">
+
+                               <div class="body">
+                                    <h5 class="p-2">Select the system you want to Convert From to To</h5>
+                                    <div class="form-check px-5">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Metric System to Imerial System
+                                        </label>
+                                      </div>
+                                      <div class="form-check px-5">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            Imperial System to Metric System
+                                        </label>
+                                      </div>
+                                </div>
+                           </div>
+
+                            <div class="col">
+                                
+                           </div>
+                       </div>
+
+                       <div class="row" id="tool">  
+                            <div class="col col1">
+                                <div class="input-group mb-3 d-inline">
+                                    <select class="custom-select" id="inputGroupSelect01">
+                                        <option  class="p-5 text-muted option" selected>Select the unit</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <div class="py-4">
+                                    <input class="" type="text" placeholder="80">
+                                </div>
+                                
+                        </div>
+                        
+                            <!-- <div class="col">
+                                <div class="d-inline"><i class="fa-solid fa-angles-right"></i></div>
+                            </div> -->
+
+                            <div class="col col2">
+                                <div class="input-group mb-3 d-inline">
+                                    <select class="custom-select" id="inputGroupSelect01">
+                                        <option  class="p-5 text-muted option" selected>Select the unit</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <div class="py-4">
+                                    <input class="" type="text" placeholder="130">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="row pb-4" id="tool1">  
+                            <div class="col col3">
+                                <input class="" type="text" placeholder="80">
+                            </div>
+                        
+
+                            <div class="col col4">
+                                <input class="" type="text" placeholder="130">
+                            </div>
+                        </div> -->
+
+
+                        <div class="row pb-5" id="tool2">  
+                            <div class="col-sm-12 col-md-6 col-lg-6 col1">
+                                
+                            </div>
+                        
+
+                            <div class="col-sm-12 col-md-6 col-lg-6 col2 px-5">
+                                <div class="row">
+                                    <div class="col" >
+                                        <p class="d-inline">Significant Digits:</p>
+                                        <div class="input-group d-inline">
+                                            <select class="custom-select" id="inputGroupSelect02">
+                                                <option value="1" selected>1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+
+                       
+                        
+                       <div class="row" id="box">
+                           <div class="col pb-5">
+                                <div class="form-check box">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault1" checked>
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Close on Replace
+                                    </label>
+                                    <div class="d-inline box"><button type="button" class="btn replace px-5">Replace</button></div>
+                                    <div class="d-inline box"><button type="button" class="btn btn-light px-5">Close</button></div>
+                                    
+                                </div>
+                                 
+                           </div>
+                        
+                       
+                    </div>
+                      
+                   </div>
+
+
+
+
+                    <div class="tab-pane px-5" id="tab2">
+                        <div class="">
+                            <p class="pb-4" id="ptitle">Use this form to calculate your Volumetric weight based on your Inputted data.</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault1" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Cubic Meter
+                                </label>
+                            </div>
+                            <div class="col-sm-12 text-left">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault1">
+                                <label class="form-check-label text-left" for="flexRadioDefault2">
+                                    Cubi Feet
+                                </label>
+                            </div>
+                            <div class="col-sm-12">
+                                
+                            </div>
+                            <div class="col-sm-12">
+                                
+                            </div>
+                        </div>
+
+                        <div class="row py-4" id="row-3">
+                            <div class="col-sm-12 col-md-6 col-lg-3">
+                                <p>Unit of Measurement</p>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-3">
+                                <div class="input-group d-inline">
+                                    <select class="custom-select" id="inputGroupSelect03">
+                                        <option value="1" selected>cm</option>
+                                        <option value="2">m</option>
+                                        <option value="3">mm</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-3">
+                                <div class="input-group d-inline">
+                                    <select class="custom-select" id="inputGroupSelect04">
+                                        <option value="1" selected>Kg</option>
+                                        <option value="2">g</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-3">
+                                 <input class="" id="weight" type="text" placeholder="Actual Weight (Kg)*">
+                            </div>
+                        </div>
+
+                        <div class="py-3"> <p>Dimensions (Cm)</p></div>
+                    
+                        <div class="row py-1">
+                            <div class="col">
+                                <p class="py-3"></p>
+                                <input class="" type="text" placeholder="Lenght (cm)">
+                            </div>
+                            <div class="col">
+                                <p class="py-3"></p>
+                                <input class="" type="text" placeholder="Width (cm)">
+                            </div>
+                            <div class="col">
+                                <p class="py-1">Your Calculated volumetric weight (Kg)</p>
+                                <input class="" type="text" placeholder="0">
+                            </div>
+                        </div>
+
+
+                        <div class="row py-1">
+                            <div class="col">
+                                <p class="py-3"></p>
+                                <input class="" type="text" placeholder="Lenght (cm)">
+                            </div>
+                            <div class="col">
+                                <p class="py-3"></p>
+                                <input class="" type="text" placeholder="Width (cm)">
+                            </div>
+                            <div class="col">
+                                <p class="py-1">Your Calculated volumetric weight (Kg)</p>
+                                <input class="" type="text" placeholder="0">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="tab-pane px-1" id="tab3">
+                        <div class="tab-pane active px-1" id="tab3">
+
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-6 p-5 text-left">
+     
+                                    <div class="body">
+                                         <h5 class="p-2">Select the system you want to Convert From to To</h5>
+                                         <div class="form-check px-5">
+                                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                             <label class="form-check-label" for="flexRadioDefault1">
+                                                 Metric System to Imerial System
+                                             </label>
+                                           </div>
+                                           <div class="form-check px-5">
+                                             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                             <label class="form-check-label" for="flexRadioDefault2">
+                                                 Imperial System to Metric System
+                                             </label>
+                                           </div>
+                                     </div>
+                                </div>
+     
+                                 <div class="col">
+                                     
+                                </div>
+                            </div>
+     
+                            <div class="row" id="tool">  
+                                 <div class="col col1">
+                                     <div class="input-group mb-3 d-inline">
+                                         <select class="custom-select px-3" id="inputGroupSelect01">
+                                             <option  class="p-5 text-muted option" selected>Select the unit</option>
+                                             <option value="1">One</option>
+                                             <option value="2">Two</option>
+                                             <option value="3">Three</option>
+                                         </select>
+                                     </div>
+                                     <div class="py-4">
+                                         <input class="" type="text" placeholder="80">
+                                     </div>
+                                     
+                             </div>
+                             
+                                 <!-- <div class="col">
+                                     <div class="d-inline"><i class="fa-solid fa-angles-right"></i></div>
+                                 </div> -->
+     
+                                 <div class="col col2">
+                                     <div class="input-group mb-3 d-inline">
+                                         <select class="custom-select" id="inputGroupSelect01">
+                                             <option  class="p-5 text-muted option" selected>Select the unit</option>
+                                             <option value="1">One</option>
+                                             <option value="2">Two</option>
+                                             <option value="3">Three</option>
+                                         </select>
+                                     </div>
+                                     <div class="py-4">
+                                         <input class="" type="text" placeholder="130">
+                                     </div>
+                                 </div>
+                             </div>
+     
+                             <!-- <div class="row pb-4" id="tool1">  
+                                 <div class="col col3">
+                                     <input class="" type="text" placeholder="80">
+                                 </div>
+                             
+     
+                                 <div class="col col4">
+                                     <input class="" type="text" placeholder="130">
+                                 </div>
+                             </div> -->
+     
+     
+                             <div class="row pb-5" id="tool2">  
+                                 <div class="col-sm-12 col-md-6 col-lg-6 col1">
+                                     
+                                 </div>
+                             
+     
+                                 <div class="col-sm-12 col-md-6 col-lg-6 col2 px-5">
+                                     <div class="row">
+                                         <div class="col" >
+                                             <p class="d-inline">Significant Digits:</p>
+                                             <div class="input-group d-inline">
+                                                 <select class="custom-select" id="inputGroupSelect02">
+                                                     <option value="1" selected>1</option>
+                                                     <option value="2">2</option>
+                                                     <option value="3">3</option>
+                                                 </select>
+                                             </div>
+                                         </div>
+                                         
+                                     </div>
+                                 </div>
+                             </div>
+     
+     
+                            
+                             
+                            <div class="row" id="box">
+                                <div class="col pb-5">
+                                     <div class="form-check box">
+                                         <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault1" checked>
+                                         <label class="form-check-label" for="flexRadioDefault2">
+                                             Close on Replace
+                                         </label>
+                                         <div class="d-inline box"><button type="button" class="btn replace px-5">Replace</button></div>
+                                         <div class="d-inline box"><button type="button" class="btn btn-light px-5">Close</button></div>
+                                         
+                                     </div>
+                                      
+                                </div>
+                             
+                            
+                         </div>
+                           
+                        </div>
+                    </div>
+
+              </div>
+        </div>
+      </div>
+</div>
+
+<!-- footer -->
+
+<div id="footer"></div>
+
+
+<script src="/assets/js/index.js"></script>
+
+</body>
+</html>
